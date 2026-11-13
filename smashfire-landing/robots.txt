@@ -1,7 +1,0 @@
-User-agent: *
-Allow: /
-Disallow: /qr/
-Disallow: /qr/*
-
-# Sitemap oficial SmashFire
-Sitemap: https://smashfire.es/sitemap.xml
