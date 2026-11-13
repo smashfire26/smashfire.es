@@ -1,0 +1,532 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Biblioteca de Recetas Oficiales Smash Burger | SmashFire</title>
+  <meta name="description" content="Aprende a preparar las mejores Smash Burgers con las recetas oficiales de SmashFire. The Classic Smash, Oklahoma Onion Burger, Doble Bacon Jam y Smash Ibérica." />
+  <link rel="canonical" href="https://smashfire.es/recetas.html" />
+
+  <!-- Metadatos Open Graph / Facebook -->
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="Biblioteca de Recetas Oficiales Smash Burger | SmashFire" />
+  <meta property="og:description" content="Recetas paso a paso, ingredientes exactos y secretos de caramelización con el Kit Oficial SmashFire 304." />
+  <meta property="og:url" content="https://smashfire.es/recetas.html" />
+  <meta property="og:image" content="https://smashfire.es/images/monta-tu-smash.jpg" />
+
+  <!-- Tipografías de Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Anton&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Yellowtail&display=swap" rel="stylesheet">
+
+    <!-- Schema.org Recipe Rich Snippets para Google Search -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "Recipe",
+        "name": "The Classic Smash 304",
+        "image": "https://smashfire.es/images/paso-7.jpg",
+        "description": "La hamburguesa smash clásica americana con costra lacy crujiente Maillard, cebolla caramelizada, doble queso cheddar fundido al vapor bajo campana cloche y salsa diner.",
+        "prepTime": "PT5M",
+        "cookTime": "PT7M",
+        "totalTime": "PT12M",
+        "recipeYield": "1 hamburguesa doble",
+        "recipeCategory": "Plato principal",
+        "recipeCuisine": "Americana",
+        "keywords": "smash burger, classic smash, hamburguesa americana, queso cheddar fundido",
+        "recipeIngredient": [
+          "2 bolas de carne de vacuno de 80 g (80% magro / 20% grasa)",
+          "2 lonchas de queso cheddar americano",
+          "1 pan brioche de patata tostado en mantequilla",
+          "Cebolla dulce finamente picada",
+          "Pepinillos agridulces laminados",
+          "Salsa diner especial (mayonesa, mostaza, kétchup y pimentón)"
+        ],
+        "recipeInstructions": [
+          {
+            "@type": "HowToStep",
+            "text": "Calienta la plancha a 240 °C hasta que humee. Coloca la bola de carne fría sobre el metal."
+          },
+          {
+            "@type": "HowToStep",
+            "text": "Coloca papel antigrasa y aplasta firmemente con la prensa SmashFire durante 10 segundos continuos."
+          },
+          {
+            "@type": "HowToStep",
+            "text": "Cocina 2 minutos sin moverla. Raspa la costra con la espátula biselada a 45° y voltea."
+          },
+          {
+            "@type": "HowToStep",
+            "text": "Coloca el queso cheddar, añade un chorrito de agua y tapa con la campana cloche 25 segundos para fundir al vapor."
+          }
+        ]
+      },
+      {
+        "@type": "Recipe",
+        "name": "Oklahoma Onion Smash Burger",
+        "image": "https://smashfire.es/images/paso-3.jpg",
+        "description": "Receta histórica de Oklahoma de 1926 con cebolla laminada ultrafina incrustada a presión en la carne y caramelizada en su propia grasa.",
+        "prepTime": "PT6M",
+        "cookTime": "PT9M",
+        "totalTime": "PT15M",
+        "recipeYield": "1 hamburguesa",
+        "recipeCategory": "Plato principal",
+        "recipeCuisine": "Americana",
+        "keywords": "oklahoma onion burger, smash burger con cebolla, smashfire",
+        "recipeIngredient": [
+          "2 bolas de carne picada 80/20 de 75 g",
+          "1 cebolla blanca dulce laminada ultrafina con mandolina",
+          "2 lonchas de cheddar suave",
+          "Pan de hamburguesa clásico con sésamo",
+          "Sal marina fina y pimienta negra en sazonador"
+        ]
+      }
+    ]
+  }
+  </script>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+
+  <!-- Lienzo interactivo de chispas y brasas -->
+  <canvas id="embers-canvas"></canvas>
+
+  <!-- ====================================================================
+       SISTEMA DE ICONOS VECTORIALES DE MARCA (SVG NATIVO - CERO EMOJIS)
+       ==================================================================== -->
+  <svg id="sf-svg-library" style="display: none;" aria-hidden="true">
+    <symbol id="sf-flame" viewBox="0 0 24 24">
+      <path fill="currentColor" d="M12 23c-4.97 0-9-3.95-9-8.82 0-3.91 2.51-7.79 5.86-11.45.62-.68 1.74-.25 1.76.66.07 2.45 1.13 4.29 2.5 5.25.13-.97.43-1.95.96-2.88.36-.63 1.25-.66 1.63-.04 1.74 2.8 3.29 6.22 3.29 8.46 0 4.87-4.03 8.82-7 8.82zm-1-6c0 1.66 1.34 3 3 3 .83 0 1.58-.34 2.12-.88C15.68 18.06 15 16.63 15 15c0-1.8 1.12-3.35 2.72-3.96-.34-.96-.86-1.87-1.54-2.67-1.78 1.83-3.18 3.73-3.18 5.63z"/>
+    </symbol>
+
+    <symbol id="sf-cart" viewBox="0 0 24 24">
+      <path fill="currentColor" d="M17 18c-1.1 0-1.99.9-1.99 2s.89 2 1.99 2 2-.9 2-2-.9-2-2-2zM7 18c-1.1 0-1.99.9-1.99 2S5.9 22 7 22s2-.9 2-2-.9-2-2-2zm0-3l1.1-2h7.45c.75 0 1.41-.41 1.75-1.03L21.7 4H5.21l-.94-2H1v2h2l3.6 7.59-1.35 2.44C4.52 15.37 5.48 17 7 17h12v-2H7z"/>
+    </symbol>
+
+    <symbol id="sf-shield" viewBox="0 0 24 24">
+      <path fill="currentColor" d="M12 1L3 5v6c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V5l-9-4zm-2 16l-4-4 1.41-1.41L10 14.17l6.59-6.59L18 9l-8 8z"/>
+    </symbol>
+
+    <symbol id="sf-check" viewBox="0 0 24 24">
+      <path fill="currentColor" d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/>
+    </symbol>
+
+    <symbol id="sf-instagram" viewBox="0 0 24 24">
+      <path fill="currentColor" d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/>
+    </symbol>
+
+    <symbol id="sf-clock" viewBox="0 0 24 24">
+      <path fill="currentColor" d="M12 2C6.5 2 2 6.5 2 12s4.5 10 10 10 10-4.5 10-10S17.5 2 12 2zm4.2 14.2L11 13V7h1.5v5.2l4.5 2.7-.8 1.3z"/>
+    </symbol>
+
+    <symbol id="sf-chef" viewBox="0 0 24 24">
+      <path fill="currentColor" d="M12 3a4.5 4.5 0 0 0-4.48 4.09 3.5 3.5 0 0 0-2.52 3.41c0 1.62 1.1 2.98 2.61 3.36C7.8 14.54 8 15.22 8 16h8c0-.78.2-1.46.39-2.14 1.51-.38 2.61-1.74 2.61-3.36a3.5 3.5 0 0 0-2.52-3.41A4.5 4.5 0 0 0 12 3zm-4 15v2h8v-2H8z"/>
+    </symbol>
+  </svg>
+
+  <!-- Banner de Retorno al Kit (Solo visible si llega desde la tarjeta QR) -->
+  <aside class="qr-return-banner" id="qr-return-banner" style="display: none;">
+    <div class="qr-return-content">
+      <div class="qr-return-text">
+        <svg class="sf-icon"><use href="#sf-flame"></use></svg>
+        <span>Estás explorando las recetas complementarias de tu <strong>Kit SmashFire</strong>.</span>
+      </div>
+      <a href="qr/index.html" class="btn-qr-back">
+        <span>« Volver a mi Kit</span>
+      </a>
+    </div>
+  </aside>
+
+  <!-- Barra de aviso superior -->
+  <div class="top-notice-bar">
+    <svg class="sf-icon"><use href="#sf-flame"></use></svg>
+    <span>BIBLIOTECA GASTRONÓMICA OFICIAL SMASHFIRE · TÉCNICA MAESTRA 304</span>
+    <svg class="sf-icon"><use href="#sf-flame"></use></svg>
+  </div>
+
+  <!-- Header Global Oficial -->
+  <header>
+    <div class="container">
+      <div class="nav-wrapper">
+        <a href="index.html" class="brand-logo" aria-label="SmashFire Home">
+          <img src="images/logo.png" alt="SmashFire Logo Oficial" class="header-logo-img">
+        </a>
+
+        <nav class="main-nav" id="main-nav">
+          <a href="index.html" class="main-nav-link">Inicio</a>
+          <a href="tienda.html" class="main-nav-link">El Kit</a>
+          <a href="recetas.html" class="main-nav-link active">Recetas</a>
+          <a href="nosotros.html" class="main-nav-link">Nosotros</a>
+          <a href="contacto.html" class="main-nav-link">Contacto</a>
+        </nav>
+
+        <div class="header-right-group">
+          <a href="https://tienda.smashfire.es/cart/59395325952264:1?storefront=true" class="btn-nav-buy">
+            <svg class="sf-icon"><use href="#sf-cart"></use></svg>
+            <span>Comprar Kit</span>
+          </a>
+
+          <div class="lang-selector-wrap">
+            <button class="lang-btn" id="lang-btn" type="button" aria-expanded="false" aria-label="Seleccionar idioma">
+              <span class="lang-code-pill">ES</span>
+              <span class="lang-chevron">▾</span>
+            </button>
+            <ul class="lang-menu" id="lang-menu">
+              <li><button class="active" onclick="switchLanguage('es')"><span class="lang-code-pill">ES</span> Español</button></li>
+              <li><button onclick="switchLanguage('pt')"><span class="lang-code-pill">PT</span> Português (Em breve)</button></li>
+              <li><button onclick="switchLanguage('en')"><span class="lang-code-pill">EN</span> English (Coming soon)</button></li>
+            </ul>
+          </div>
+
+          <button type="button" class="mobile-menu-btn" id="mobile-menu-toggle" aria-label="Abrir menú de navegación">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor">
+              <path d="M3 18h18v-2H3v2zm0-5h18v-2H3v2zm0-7v2h18V6H3z"/>
+            </svg>
+          </button>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <!-- Header Hero de Recetas -->
+    <section class="page-hero-banner">
+      <div class="container">
+        <div class="page-hero-badge">
+          <svg class="sf-icon"><use href="#sf-chef"></use></svg>
+          <span>EL ARTE DE LA CARAMELIZACIÓN EXACTA</span>
+        </div>
+        <h1 class="page-hero-title">
+          BIBLIOTECA DE RECETAS <span class="text-fire">SMASHFIRE</span>
+        </h1>
+        <p class="page-hero-lead">
+          Fórmulas legendarias de diner americano calibradas para aprovechar al máximo la presión maciza de la prensa 304 y la cámara de vapor de la campana cloche.
+        </p>
+      </div>
+    </section>
+
+    <!-- Catálogo de Recetas con Filtros -->
+    <section class="recipes-page-section">
+      <!-- Filtros de categoría -->
+      <div class="recipe-filter-bar">
+        <button type="button" class="recipe-filter-btn active" onclick="filterRecipes('all', this)">Todas las Recetas</button>
+        <button type="button" class="recipe-filter-btn" onclick="filterRecipes('clasicas', this)">Clásicas de Diner</button>
+        <button type="button" class="recipe-filter-btn" onclick="filterRecipes('dobles', this)">Dobles & Smash XL</button>
+        <button type="button" class="recipe-filter-btn" onclick="filterRecipes('especiales', this)">Especiales de Autor</button>
+      </div>
+
+      <!-- Grid de Fichas de Recetas -->
+      <div class="recipes-catalog-grid">
+
+        <!-- Receta 1: The Classic Smash 304 -->
+        <article class="recipe-full-card recipe-card" data-category="clasicas">
+          <div class="recipe-card-media">
+            <img src="images/paso-7.jpg" alt="The Classic Smash Burger servida en cesta diner con papel a cuadros" />
+            <span class="recipe-category-pill">Clásica Americana</span>
+          </div>
+          <div class="recipe-card-body">
+            <h2 class="recipe-card-title">THE CLASSIC SMASH 304 (SINGLE O DOBLE)</h2>
+            <div class="recipe-meta-row">
+              <span class="recipe-meta-item">
+                <svg class="sf-icon" style="width: 15px; height: 15px;"><use href="#sf-clock"></use></svg>
+                12 min
+              </span>
+              <span class="recipe-meta-item">
+                <svg class="sf-icon" style="width: 15px; height: 15px;"><use href="#sf-flame"></use></svg>
+                Principiante
+              </span>
+              <span class="recipe-meta-item">80/20 Vacuno</span>
+            </div>
+            <p class="recipe-card-excerpt">
+              La piedra angular del smash auténtico. Bordes lacy crujientes caramelizados por la Reacción de Maillard, queso americano fundido en nube de vapor bajo la cloche y salsa diner clásica.
+            </p>
+
+            <div class="recipe-ingredients-block">
+              <strong>Ingredientes Maestros:</strong>
+              <ul>
+                <li>2 bolas de carne de vacuno de 80 g (80% magro / 20% grasa), muy frías</li>
+                <li>2 lonchas de auténtico queso cheddar americano</li>
+                <li>1 pan brioche de patata tostado en mantequilla</li>
+                <li>Cebolla dulce finamente picada y pepinillos agridulces</li>
+                <li>Salsa diner: 2 cdas mayonesa, 1 cdta mostaza, 1 cdta kétchup y pizca de pimentón</li>
+              </ul>
+            </div>
+
+            <div class="recipe-steps-block">
+              <div class="recipe-step-item">
+                <span class="step-num-badge">1</span>
+                <div><strong>Plancha a 240 °C:</strong> Coloca la bola fría sin grasa añadida. Pon el papel antigrasa encima y aplasta con la prensa SmashFire durante 10 segundos continuos con todo el peso de tu cuerpo.</div>
+              </div>
+              <div class="recipe-step-item">
+                <span class="step-num-badge">2</span>
+                <div><strong>Costra sin tocar:</strong> Deja cocinar 2 minutos sin moverla hasta ver los bordes oscuros y crujientes. Raspa con la espátula biselada a 45° con un golpe seco para despegar la costra entera.</div>
+              </div>
+              <div class="recipe-step-item">
+                <span class="step-num-badge">3</span>
+                <div><strong>Golpe de vapor:</strong> Voltea, coloca el queso de inmediato, echa un chorrito de agua al lado y tapa con la campana cloche durante 25 segundos. Sirve en tu cesta diner americana.</div>
+              </div>
+            </div>
+
+            <!-- Consejo Pro SmashFire -->
+            <div class="recipe-pro-tip-box">
+              <strong>Consejo del Maestro SmashFire:</strong>
+              La bola de vacuno debe ir directa de la nevera a la plancha humeante. El choque térmico retarda la licuefacción de la grasa y maximiza la Reacción de Maillard, creando bordes lacy ultrafinos y crujientes.
+            </div>
+          </div>
+        </article>
+
+        <!-- Receta 2: Oklahoma Onion Smash Burger -->
+        <article class="recipe-full-card recipe-card" data-category="clasicas">
+          <div class="recipe-card-media">
+            <img src="images/paso-3.jpg" alt="Oklahoma Onion Smash con cebolla incrustada en la carne" />
+            <span class="recipe-category-pill">Histórica de 1926</span>
+          </div>
+          <div class="recipe-card-body">
+            <h2 class="recipe-card-title">OKLAHOMA ONION SMASH BURGER</h2>
+            <div class="recipe-meta-row">
+              <span class="recipe-meta-item">
+                <svg class="sf-icon" style="width: 15px; height: 15px;"><use href="#sf-clock"></use></svg>
+                15 min
+              </span>
+              <span class="recipe-meta-item">
+                <svg class="sf-icon" style="width: 15px; height: 15px;"><use href="#sf-flame"></use></svg>
+                Intermedio
+              </span>
+              <span class="recipe-meta-item">Cebolla Mandolina</span>
+            </div>
+            <p class="recipe-card-excerpt">
+              Nacida en El Reno, Oklahoma. La cebolla cortada en láminas transparentes se coloca sobre la bola y se incrusta con la prensa dentro de la trama de la carne, caramelizándose en su propia grasa hirviendo.
+            </p>
+
+            <div class="recipe-ingredients-block">
+              <strong>Ingredientes Maestros:</strong>
+              <ul>
+                <li>2 bolas de carne picada 80/20 de 75 g cada una</li>
+                <li>1 cebolla blanca dulce laminada ultrafina con mandolina</li>
+                <li>2 lonchas de cheddar suave</li>
+                <li>Pan de hamburguesa clásico con sésamo</li>
+                <li>Sal marina fina y pimienta negra en sazonador SmashFire</li>
+              </ul>
+            </div>
+
+            <div class="recipe-steps-block">
+              <div class="recipe-step-item">
+                <span class="step-num-badge">1</span>
+                <div><strong>Incrustación de cebolla:</strong> Coloca la bola en la plancha humeante y ponle encima un puñado generoso de cebolla laminada. Pon el papel antigrasa y aplasta con la prensa con fuerza durante 12 segundos.</div>
+              </div>
+              <div class="recipe-step-item">
+                <span class="step-num-badge">2</span>
+                <div><strong>Sazonar y esperar:</strong> Sazona con el dosificador pro. La cebolla suelta agua que ayuda a cocinar la carne por arriba mientras la base se tuesta. Deja cocinar 2 minutos y medio.</div>
+              </div>
+              <div class="recipe-step-item">
+                <span class="step-num-badge">3</span>
+                <div><strong>Voltear sobre la cebolla:</strong> Pasa la espátula biselada raspando a fondo y voltea. Ahora la cebolla queda en contacto directo con el fuego y se carameliza en 60 segundos. Pon el queso y cloche 20 segundos.</div>
+              </div>
+            </div>
+
+            <!-- Consejo Pro SmashFire -->
+            <div class="recipe-pro-tip-box">
+              <strong>Consejo del Maestro SmashFire:</strong>
+              Lamina la cebolla con mandolina en grosor milimétrico (casi translúcida). Si es demasiado gruesa acumulará exceso de agua y hervirá la carne; si es ultrafina se fundirá y caramelizará al instante en la propia grasa del vacuno.
+            </div>
+          </div>
+        </article>
+
+        <!-- Receta 3: Doble Bacon Jam Smash -->
+        <article class="recipe-full-card recipe-card" data-category="dobles">
+          <div class="recipe-card-media">
+            <img src="images/momento-smash.jpg" alt="Doble Bacon Jam Smash Burger con cheddar fundido" />
+            <span class="recipe-category-pill">Doble & Gourmet</span>
+          </div>
+          <div class="recipe-card-body">
+            <h2 class="recipe-card-title">DOBLE BACON JAM SMASH CON MAYO TRUFADA</h2>
+            <div class="recipe-meta-row">
+              <span class="recipe-meta-item">
+                <svg class="sf-icon" style="width: 15px; height: 15px;"><use href="#sf-clock"></use></svg>
+                18 min
+              </span>
+              <span class="recipe-meta-item">
+                <svg class="sf-icon" style="width: 15px; height: 15px;"><use href="#sf-flame"></use></svg>
+                Gourmet Pro
+              </span>
+              <span class="recipe-meta-item">Doble Patty 80g</span>
+            </div>
+            <p class="recipe-card-excerpt">
+              Una explosión sensorial de dulce, salado y ahumado. Dos patties smash ultrafinas combinadas con mermelada casera de bacon ahumado al bourbon, doble cheddar americano madurado y mayonesa a la pimienta trufada.
+            </p>
+
+            <div class="recipe-ingredients-block">
+              <strong>Ingredientes Maestros:</strong>
+              <ul>
+                <li>2 bolas de carne de aguja de vacuno (80 g c/u)</li>
+                <li>3 cdas de bacon jam (bacon ahumado picado, chalotas, miel, bourbon y vinagre de manzana)</li>
+                <li>2 lonchas de cheddar madurado 9 meses</li>
+                <li>Pan brioche glaseado con mantequilla</li>
+                <li>Mayonesa suave emulsionada con aceite de trufa negra</li>
+              </ul>
+            </div>
+
+            <div class="recipe-steps-block">
+              <div class="recipe-step-item">
+                <span class="step-num-badge">1</span>
+                <div><strong>Doble Smash Simultáneo:</strong> Aplasta dos bolas simultáneas con la prensa 304 sobre la plancha bien caliente para lograr costras dobles ultrafinas.</div>
+              </div>
+              <div class="recipe-step-item">
+                <span class="step-num-badge">2</span>
+                <div><strong>Coronar con Bacon Jam:</strong> Tras raspar y voltear con la espátula biselada, unta una cucharada colmada de bacon jam templada sobre cada patty recién volteada.</div>
+              </div>
+              <div class="recipe-step-item">
+                <span class="step-num-badge">3</span>
+                <div><strong>Fundido de cheddar:</strong> Cubre con las lonchas de cheddar, cubre ambas patties bajo la cloche con golpe de agua lateral durante 30 segundos. Apila y sirve sobre brioche con mayo trufada.</div>
+              </div>
+            </div>
+
+            <!-- Consejo Pro SmashFire -->
+            <div class="recipe-pro-tip-box">
+              <strong>Consejo del Maestro SmashFire:</strong>
+              Templa la mermelada de bacon en un cazo pequeño antes de montarla. Si la colocas fría de la nevera frenará el calor de la carne y entorpecerá el fundido cremoso del cheddar madurado.
+            </div>
+          </div>
+        </article>
+
+        <!-- Receta 4: Smash Ibérica de Secreto & Manchego -->
+        <article class="recipe-full-card recipe-card" data-category="especiales">
+          <div class="recipe-card-media">
+            <img src="images/diner-presentacion.jpg" alt="Smash Ibérica con queso manchego fundido" />
+            <span class="recipe-category-pill">Fusión de Autor</span>
+          </div>
+          <div class="recipe-card-body">
+            <h2 class="recipe-card-title">SMASH IBÉRICA DE SECRETO & MANCHEGO</h2>
+            <div class="recipe-meta-row">
+              <span class="recipe-meta-item">
+                <svg class="sf-icon" style="width: 15px; height: 15px;"><use href="#sf-clock"></use></svg>
+                16 min
+              </span>
+              <span class="recipe-meta-item">
+                <svg class="sf-icon" style="width: 15px; height: 15px;"><use href="#sf-flame"></use></svg>
+                Exclusivo
+              </span>
+              <span class="recipe-meta-item">Vacuno + Secreto</span>
+            </div>
+            <p class="recipe-card-excerpt">
+              El maridaje definitivo entre la técnica diner americana y la joya ibérica española. Carne picada con grasa de secreto ibérico, lascas de queso manchego semicurado fundidas al vapor y pimientos caramelizados.
+            </p>
+
+            <div class="recipe-ingredients-block">
+              <strong>Ingredientes Maestros:</strong>
+              <ul>
+                <li>2 bolas de carne (60% aguja de vaca madurada / 40% secreto ibérico picado) de 80 g</li>
+                <li>4 lascas finas de queso manchego semicurado D.O.</li>
+                <li>Tiras de pimientos del piquillo confitados en aceite de oliva</li>
+                <li>Alioli suave de ajo asado a baja temperatura</li>
+                <li>Pan brioche artesano</li>
+              </ul>
+            </div>
+
+            <div class="recipe-steps-block">
+              <div class="recipe-step-item">
+                <span class="step-num-badge">1</span>
+                <div><strong>Smash ibérico:</strong> Aplasta con papel antigrasa y la prensa 304. La grasa infiltrada del secreto creará una costra caramelizada con aroma a bellota inconfundible.</div>
+              </div>
+              <div class="recipe-step-item">
+                <span class="step-num-badge">2</span>
+                <div><strong>Lascas de manchego:</strong> Al dar la vuelta con la espátula biselada, añade las lascas de queso manchego. El manchego necesita más calor para licuarse, por lo que la campana cloche es obligatoria.</div>
+              </div>
+              <div class="recipe-step-item">
+                <span class="step-num-badge">3</span>
+                <div><strong>Cámara cloche 35 segundos:</strong> Añade agua a la plancha para generar vapor denso que derretirá el manchego sin quemar la base. Monta con piquillo templado y alioli suave.</div>
+              </div>
+            </div>
+
+            <!-- Consejo Pro SmashFire -->
+            <div class="recipe-pro-tip-box">
+              <strong>Consejo del Maestro SmashFire:</strong>
+              La grasa del secreto ibérico funde a menor temperatura que la de ternera. Mantén la plancha a 220 °C (un toque más moderado) para permitir que el queso manchego semicurado se funda sin quemar la base antes de tiempo.
+            </div>
+          </div>
+        </article>
+
+      </div>
+
+      <!-- Banner de llamada a compra del Kit -->
+      <div class="shopify-cta-box" style="margin-top: 60px;">
+        <span class="shopify-cta-badge">EQUÍPATE COMO UN PROFESIONAL</span>
+        <h3 class="shopify-cta-title">¿LISTO PARA PREPARAR ESTAS RECETAS EN TU CASA?</h3>
+        <p class="shopify-cta-lead">
+          Con el Kit Oficial SmashFire tienes las herramientas exactas que garantizan bordes crujientes, fundido de queso perfecto y acero 304 para siempre.
+        </p>
+        <div style="margin-top: 24px;">
+          <a href="https://tienda.smashfire.es/cart/59395325952264:1?storefront=true" class="btn-primary-fire" style="display: inline-flex;">
+            <svg class="sf-icon"><use href="#sf-cart"></use></svg>
+            <span>Ver y Comprar el Kit Oficial (49,99 €)</span>
+          </a>
+        </div>
+      </div>
+
+    </section>
+  </main>
+
+  <!-- ====================================================================
+       FOOTER GLOBAL OFICIAL & LEGALES
+       ==================================================================== -->
+  <footer>
+    <div class="container">
+      <div class="footer-inner">
+        <div class="footer-brand">
+          <img src="images/logo.png" alt="SmashFire Logo Oficial" class="footer-logo-img">
+          <p class="footer-tagline">
+            El arte de la smash burger americana perfeccionado con acero inoxidable 304.
+          </p>
+          <div style="margin-top: 14px;">
+            <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" class="insta-cta-btn" style="padding: 8px 16px; font-size: 0.8rem; display: inline-flex;">
+              <svg class="sf-icon"><use href="#sf-instagram"></use></svg>
+              <span>@smashfire.es</span>
+            </a>
+          </div>
+        </div>
+
+        <div class="footer-nav-col">
+          <h4 style="font-family: 'Anton', sans-serif; color: var(--gold-light); text-transform: uppercase; margin-bottom: 12px;">Explorar</h4>
+          <ul style="list-style: none; display: flex; flex-direction: column; gap: 8px; font-size: 0.88rem;">
+            <li><a href="index.html" style="color: #ded6ce; text-decoration: none;">Inicio</a></li>
+            <li><a href="tienda.html" style="color: #ded6ce; text-decoration: none;">El Kit Oficial</a></li>
+            <li><a href="recetas.html" style="color: #ded6ce; text-decoration: none;">Biblioteca de Recetas</a></li>
+            <li><a href="nosotros.html" style="color: #ded6ce; text-decoration: none;">Sobre SmashFire</a></li>
+            <li><a href="contacto.html" style="color: #ded6ce; text-decoration: none;">Contacto</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-nav-col">
+          <h4 style="font-family: 'Anton', sans-serif; color: var(--gold-light); text-transform: uppercase; margin-bottom: 12px;">Garantía & Soporte</h4>
+          <p style="font-size: 0.84rem; color: #b8ada2; line-height: 1.5; margin-bottom: 10px;">
+            Atención al cliente directa:<br>
+            <strong style="color: #fff;">info@smashfire.es</strong>
+          </p>
+          <p style="font-size: 0.8rem; color: #8e847a;">
+            Pagos procesados y protegidos por Shopify Checkout. Aceptamos Visa, Mastercard, Apple Pay, Google Pay y Bizum.
+          </p>
+        </div>
+      </div>
+
+      <div class="footer-legal-bar" style="margin-top: 35px; padding-top: 20px; border-top: 1px solid rgba(255, 120, 30, 0.2); display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 14px; font-size: 0.78rem; color: #8e847a;">
+        <div>
+          &copy; 2026 SmashFire. Todos los derechos reservados.
+        </div>
+        <div class="footer-links">
+          <a href="legal/aviso-legal.html">Aviso Legal</a>
+          <span>·</span>
+          <a href="legal/privacidad.html">Política de Privacidad</a>
+          <span>·</span>
+          <a href="legal/cookies.html">Cookies</a>
+          <span>·</span>
+          <a href="legal/condiciones-venta.html">Condiciones de Venta</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,859 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <!-- Requisito estricto del brief: noindex para no competir con el sitio principal ni con Amazon -->
+  <meta name="robots" content="noindex, nofollow" />
+  <title>SmashFire — Guía Oficial y Experiencia Postcompra</title>
+
+  <!-- Tipografías de Google Fonts: Anton (Impacto rústico), Bebas Neue, Yellowtail (Diner cursive), Plus Jakarta Sans -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Anton&family=Bebas+Neue&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Yellowtail&display=swap" rel="stylesheet">
+
+  <link rel="icon" type="image/png" href="images/logo.png">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+  <!-- Fondo animado de Brasas, Cenizas y Chispas en Canvas -->
+  <canvas id="embers-canvas"></canvas>
+  <div class="heat-haze-ambient"></div>
+
+  <!-- Barra Superior de Notificación Exclusiva Postcompra -->
+  <div class="top-notice-bar">
+    <span>🔥 ACCESO EXCLUSIVO CLIENTES · EXPERIENCIA OFICIAL POSTCOMPRA · ESCANEADO VÍA QR</span>
+  </div>
+
+  <!-- Header Sticky con Logo Oficial y Selector de Idioma -->
+  <header>
+    <div class="container nav-wrapper">
+      <a href="#" class="brand-logo" title="SmashFire - Light The Fire. Start Smashing.">
+        <img src="images/logo.png" alt="SmashFire - Light The Fire. Start Smashing." class="header-logo-img">
+      </a>
+
+      <div class="header-controls">
+        <!-- Selector de Idioma (ES / PT / EN) -->
+        <div class="lang-dropdown">
+          <button class="lang-btn" id="lang-btn" onclick="toggleLangMenu()">
+            <span id="current-lang-flag">🇪🇸</span>
+            <span id="current-lang-text">ES</span>
+            <span>▾</span>
+          </button>
+          <ul class="lang-menu" id="lang-menu">
+            <li><button class="active" onclick="switchLanguage('es')"><span>🇪🇸</span> Español</button></li>
+            <li><button onclick="switchLanguage('pt')"><span>🇵🇹</span> Português (Em breve)</button></li>
+            <li><button onclick="switchLanguage('en')"><span>🇬🇧</span> English (Coming soon)</button></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- Barra de Navegación Rápida Mobile-First Sticky (Chips de Cocina) -->
+  <nav class="quick-nav-bar">
+    <div class="quick-nav-list">
+      <a href="#proceso" class="quick-nav-item">Los 4 Pasos</a>
+      <a href="#momento-smash" class="quick-nav-item">El Momento Smash</a>
+      <a href="#receta" class="quick-nav-item">Receta Maestra</a>
+      <a href="#diner" class="quick-nav-item">Estilo Diner</a>
+      <a href="#comunidad" class="quick-nav-item">Comunidad</a>
+      <a href="#tips" class="quick-nav-item">Tips Pro</a>
+      <a href="#cuidados" class="quick-nav-item">Mantenimiento 304</a>
+      <a href="#faq" class="quick-nav-item">Dudas Frecuentes</a>
+      <a href="#certificados" class="quick-nav-item">Certificados</a>
+    </div>
+  </nav>
+
+  <main class="container">
+
+    <!-- ====================================================================
+         HERO / BIENVENIDA POSTCOMPRA
+         ==================================================================== -->
+    <section class="hero-section">
+      <div class="hero-brand-emblem">
+        <img src="images/logo.png" alt="SmashFire Logo Oficial" class="hero-logo-img">
+      </div>
+
+      <div class="post-purchase-plaque">
+        <span>⭐ KIT OFICIAL SMASHFIRE · CERTIFICADO ACERO INOX 304</span>
+      </div>
+
+      <h1 class="hero-title">DE LA PLANCHA<br>AL PRIMER BOCADO</h1>
+      <p class="hero-subtitle">Un proceso simple para lograr burgers con costra, jugosidad y queso perfectamente fundido</p>
+
+      <p class="hero-intro-text">
+        <strong>¡Bienvenido al club del fuego y el hierro fundido!</strong> Esta guía exclusiva ha sido diseñada para que le saques el 100% de provecho a cada utensilio de tu nuevo kit <strong>SmashFire</strong> desde la primera hamburguesa. Domina el calor, aplica la presión exacta y disfruta en casa de una experiencia al más puro estilo <em>American Diner</em>.
+      </p>
+
+      <!-- Tres pastillas de confianza técnica con bordes industriales rectos -->
+      <div class="hero-trust-chips">
+        <div class="hero-trust-chip">
+          <span class="trust-chip-icon">🛡️</span>
+          <div class="trust-chip-body">
+            <strong>Acero Quirúrgico 304</strong>
+            <span>Sin recubrimientos químicos</span>
+          </div>
+        </div>
+        <div class="hero-trust-chip">
+          <span class="trust-chip-icon">🔥</span>
+          <div class="trust-chip-body">
+            <strong>Inercia Térmica Máxima</strong>
+            <span>Costra Maillard en 10s</span>
+          </div>
+        </div>
+        <div class="hero-trust-chip">
+          <span class="trust-chip-icon">🍟</span>
+          <div class="trust-chip-body">
+            <strong>Estilo American Diner</strong>
+            <span>2 Cestas + Papel a cuadros</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ====================================================================
+         SECCIÓN 1: EL PROCESO DE LOS 4 PASOS (ENCUADRE COMPLETO Y ALTA DEFINICIÓN)
+         ==================================================================== -->
+    <section class="process-board-section" id="proceso">
+      <div class="section-header">
+        <span class="section-tag">El ritual del auténtico smash</span>
+        <h2 class="section-title">DE LA PLANCHA <span>AL PRIMER BOCADO</span></h2>
+        <p class="section-lead">Cuatro acciones secuenciales calibradas para conseguir esa costra oscura caramelizada (reacción de Maillard) y un interior rebosante de jugos.</p>
+      </div>
+
+      <!-- Marco de la Infografía Master: Resolución nativa 1024x633, encuadre 100% visible sin recortes -->
+      <div class="banner-pasos-frame">
+        <img src="images/banner-pasos.jpg" alt="Proceso SmashFire de la Plancha al Primer Bocado: Presiona, Funde, Levanta, Sirve" class="banner-pasos-img">
+      </div>
+
+      <!-- Tarjetas Técnicas de Detalle para cada Paso -->
+      <div class="process-board-grid">
+        <!-- Panel 1: PRESIONA -->
+        <div class="process-panel">
+          <div class="process-panel-header">
+            <div class="step-num-badge">01</div>
+            <div>
+              <h3 class="step-action-name">PRESIONA</h3>
+              <span class="step-param-tag">10 SEG · PRENSA 304</span>
+            </div>
+          </div>
+          <p class="process-panel-desc">
+            Sella la bola de carne sobre la plancha a 230°C-250°C aplicando presión firme y continua con la prensa de acero macizo para crear la costra caramelizada inmediata (reacción de Maillard).
+          </p>
+          <div class="process-panel-meta">
+            <span class="panel-meta-chip">🔥 Tª: 230°C - 250°C</span>
+            <span class="panel-meta-chip">⏱️ Tiempo: 10s firmes</span>
+          </div>
+        </div>
+
+        <!-- Panel 2: FUNDE -->
+        <div class="process-panel">
+          <div class="process-panel-header">
+            <div class="step-num-badge">02</div>
+            <div>
+              <h3 class="step-action-name">FUNDE</h3>
+              <span class="step-param-tag">15 SEG · CAMPANA CLOCHE</span>
+            </div>
+          </div>
+          <p class="process-panel-desc">
+            Coloca el queso cheddar sobre la carne y cúbrela con la campana cloche. Añade 3 gotas de agua a la plancha para generar vapor y lograr un fundido cremoso y envolvente a 360°.
+          </p>
+          <div class="process-panel-meta">
+            <span class="panel-meta-chip">🧀 Cheddar: 2 lonchas</span>
+            <span class="panel-meta-chip">💨 Efecto: Micro-vapor</span>
+          </div>
+        </div>
+
+        <!-- Panel 3: LEVANTA -->
+        <div class="process-panel">
+          <div class="process-panel-header">
+            <div class="step-num-badge">03</div>
+            <div>
+              <h3 class="step-action-name">LEVANTA</h3>
+              <span class="step-param-tag">BISEL 45° · ESPÁTULA</span>
+            </div>
+          </div>
+          <p class="process-panel-desc">
+            Introduce la espátula biselada a 45° a ras de la superficie de hierro con un movimiento decidido para despegar toda la costra crujiente intacta sin romper el disco de carne.
+          </p>
+          <div class="process-panel-meta">
+            <span class="panel-meta-chip">📐 Ángulo: 45° a ras</span>
+            <span class="panel-meta-chip">🛡️ Costra: 100% intacta</span>
+          </div>
+        </div>
+
+        <!-- Panel 4: SIRVE -->
+        <div class="process-panel">
+          <div class="process-panel-header">
+            <div class="step-num-badge">04</div>
+            <div>
+              <h3 class="step-action-name">SIRVE</h3>
+              <span class="step-param-tag">ESTILO DINER · CESTAS</span>
+            </div>
+          </div>
+          <p class="process-panel-desc">
+            Monta en el pan brioche caliente tostado y presenta en las cestas metálicas con el papel a cuadros vichy y patatas crujientes. ¡Auténtico sabor de restaurante en tu mesa!
+          </p>
+          <div class="process-panel-meta">
+            <span class="panel-meta-chip">🍟 Con patatas fritas</span>
+            <span class="panel-meta-chip">⭐ Presentación Diner</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ====================================================================
+         SECCIÓN 2: EL MOMENTO SMASH & ACERO 304 (INSPIRADO EN LA FOTO 2)
+         ==================================================================== -->
+    <section class="smash-moment-section" id="momento-smash">
+      <div class="smash-moment-grid">
+        <div class="smash-moment-content">
+          <span class="section-tag" style="text-align: left;">Ingeniería de materiales</span>
+          <h2 class="smash-big-title">
+            EL MOMENTO
+            <span class="smash-word-gradient">SMASH</span>
+          </h2>
+          <div class="smash-cursive-hook">Costra crujiente, carne jugosa</div>
+
+          <!-- Sello Metálico 3D Acero 304 de la Imagen 2 -->
+          <div class="steel-seal-plaque">
+            <div class="seal-circle-emblem">
+              <span>ACERO</span>
+              <span>304</span>
+            </div>
+            <div class="seal-details">
+              <strong>Acero Inoxidable Quirúrgico AISI 304</strong>
+              <span>Antióxido permanente · Inercia térmica extrema · Cero químicos</span>
+            </div>
+          </div>
+
+          <p class="smash-text-body">
+            El secreto de una smash burger inolvidable reside en la combinación entre la <strong>prensa sólida de alta inercia</strong> y la <strong>campana cloche de vapor sellado</strong>. Con el kit SmashFire consigues la transferencia térmica perfecta: una costra caramelizada profunda al contacto con el metal y un queso fundido y cremoso en segundos que atrapa toda la humedad de la carne.
+          </p>
+
+          <div class="smash-highlight-callout">
+            🧀 Queso Perfectamente Fundido en Segundos
+          </div>
+
+          <!-- Botón de consulta de certificado -->
+          <button class="btn-view-cert" onclick="openCertModal()">
+            🛡️ Consultar Certificado Alimentario Acero 304
+          </button>
+        </div>
+
+        <!-- Imagen 2: El Momento Smash (Encuadre 1:1 nativo sin recortes) -->
+        <div class="smash-photo-frame">
+          <img src="images/momento-smash.jpg" alt="El Momento Smash: campana y prensa de acero 304 sobre queso fundido" class="framed-square-img">
+        </div>
+      </div>
+    </section>
+
+    <!-- ====================================================================
+         SECCIÓN 3: LA RECETA OFICIAL & CALCULADORA INTERACTIVA DE SMASH
+         ==================================================================== -->
+    <section class="recipe-section" id="receta">
+      <div class="grill-master-ticket">
+        <div class="ticket-stamp">RECETA OFICIAL CERTIFICADA</div>
+
+        <div class="section-header" style="margin-bottom: 16px;">
+          <span class="section-tag">La fórmula maestra de la casa</span>
+          <h2 class="section-title">RECETA <span>SMASH MASTER</span></h2>
+          <p class="section-lead">Ingredientes exactos, pesos milimétricos y tiempos controlados para garantizar el éxito desde la primera burger.</p>
+        </div>
+
+        <div class="recipe-pillars-grid">
+          <!-- Pilar 1 -->
+          <div class="pillar-card">
+            <h3 class="pillar-title">🥩 1. El Blend de Carne</h3>
+            <ul class="pillar-list">
+              <li><span class="fire-bullet">🔥</span> <div><strong>Proporción 80/20 o 75/25:</strong> 80% magro y 20% grasa. Cortes clave: aguja, lomo alto, entraña o picaña.</div></li>
+              <li><span class="fire-bullet">🔥</span> <div><strong>Bolas de 80 a 90 gramos:</strong> El peso ideal para crear un disco fino de bordes crujientes sin secar el centro.</div></li>
+              <li><span class="fire-bullet">🔥</span> <div><strong>Carne bien fría:</strong> Guárdalas en la nevera hasta los 5 segundos previos a tocarlas en la plancha caliente.</div></li>
+              <li><span class="fire-bullet">🔥</span> <div><strong>Cero sal previa:</strong> La sal dentro de la mezcla cruda desnaturaliza la carne; sala solo en la plancha.</div></li>
+            </ul>
+          </div>
+
+          <!-- Pilar 2 -->
+          <div class="pillar-card">
+            <h3 class="pillar-title">🍞 2. Pan Brioche & Queso</h3>
+            <ul class="pillar-list">
+              <li><span class="fire-bullet">🔥</span> <div><strong>Pan Brioche con mantequilla:</strong> Suave, esponjoso, tostado previamente en la plancha 1 minuto.</div></li>
+              <li><span class="fire-bullet">🔥</span> <div><strong>Queso Americano / Cheddar:</strong> 2 lonchas gruesas por hamburguesa con alto índice de fundición.</div></li>
+              <li><span class="fire-bullet">🔥</span> <div><strong>Barrera de Mantequilla:</strong> El tostado sella la miga para que no se humedezca con los jugos.</div></li>
+            </ul>
+          </div>
+
+          <!-- Pilar 3 -->
+          <div class="pillar-card">
+            <h3 class="pillar-title">🧂 3. Sazón & Toppings</h3>
+            <ul class="pillar-list">
+              <li><span class="fire-bullet">🔥</span> <div><strong>Sal en Escamas & Pimienta:</strong> Espolvoreadas generosamente justo tras el aplastamiento.</div></li>
+              <li><span class="fire-bullet">🔥</span> <div><strong>Pepinillos Agridulces Finos:</strong> Corte en mandolina para aportar acidez fresca que equilibra la grasa.</div></li>
+              <li><span class="fire-bullet">🔥</span> <div><strong>Salsa SmashFire:</strong> Mayonesa, mostaza suave, ketchup rústico y un toque de salmuera de pepinillos.</div></li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- Calculadora Interactiva de Carne y Plancha -->
+        <div class="calculator-box">
+          <h3 class="calc-title">🔥 CALCULADORA DE TIEMPOS Y PARÁMETROS SMASH</h3>
+          <p class="calc-subtitle">Selecciona el tipo de burger que vas a preparar para calibrar tu plancha y herramientas al instante:</p>
+
+          <div class="burger-type-selector">
+            <button class="btn-calc-choice" onclick="setCalcBurger('single', this)">Single Smash (80g)</button>
+            <button class="btn-calc-choice active" onclick="setCalcBurger('double', this)">Doble Smash (2x 80g) · Favorita</button>
+            <button class="btn-calc-choice" onclick="setCalcBurger('triple', this)">Triple Smash (3x 75g)</button>
+          </div>
+
+          <div class="calc-results-row">
+            <div class="calc-result-chip">
+              <div class="calc-result-label">Temp Plancha</div>
+              <div class="calc-result-val" id="calc-temp">230°C - 250°C</div>
+            </div>
+            <div class="calc-result-chip">
+              <div class="calc-result-label">Tiempo de Smash</div>
+              <div class="calc-result-val" id="calc-smash">10 Segundos</div>
+            </div>
+            <div class="calc-result-chip">
+              <div class="calc-result-label">Sellado Maillard</div>
+              <div class="calc-result-val" id="calc-maillard">110 - 120 Seg</div>
+            </div>
+            <div class="calc-result-chip">
+              <div class="calc-result-label">Campana Cloche</div>
+              <div class="calc-result-val" id="calc-cloche">15 - 20 Seg</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ====================================================================
+         SECCIÓN 4: EXPERIENCIA DINER AMERICANA (INSPIRADA EN LA FOTO 4)
+         ==================================================================== -->
+    <section class="diner-section" id="diner">
+      <div class="diner-board">
+        <!-- Imagen 4: Experiencia Diner Americana (Encuadre 1:1 nativo sin recortes) -->
+        <div class="diner-photo-frame">
+          <img src="images/diner-presentacion.jpg" alt="Hamburguesa smash presentada con patatas en cesta metálica de diner americano" class="framed-square-img">
+        </div>
+
+        <div class="diner-content-box">
+          <!-- Tira vichy roja y blanca clásica de diner con bordes rectos -->
+          <div class="vichy-ribbon"></div>
+
+          <span class="section-tag" style="text-align: left;">Presenta, Comparte, Disfruta</span>
+          <h2 class="section-title" style="text-align: left; margin-bottom: 14px;">
+            EXPERIENCIA <span>DINER AMERICANA</span>
+          </h2>
+
+          <p style="color: #ded6cd; font-size: 0.95rem; line-height: 1.65; margin-bottom: 20px;">
+            Cocinar una gran hamburguesa no termina en la plancha; termina en cómo se sirve. El kit SmashFire incluye <strong>2 cestas metálicas estilo diner retro</strong> y papel encerado a cuadros rojos y blancos que recrean la mística de los restaurantes de carretera de los años 50 en tu propia mesa.
+          </p>
+
+          <!-- Pastillas idénticas a las de la Foto 4 con bordes industriales rectos -->
+          <div class="diner-chips-row">
+            <div class="diner-feature-chip">
+              <div class="diner-chip-icon-box">🍟</div>
+              <div class="diner-chip-text">
+                2 Cestas
+                <span>Metálicas incluidas</span>
+              </div>
+            </div>
+
+            <div class="diner-feature-chip">
+              <div class="diner-chip-icon-box">⭐</div>
+              <div class="diner-chip-text">
+                Presentación
+                <span>100% Premium</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ====================================================================
+         SECCIÓN 5: LA EXPERIENCIA COMPLETA (INSPIRADA EN LA FOTO 3)
+         ==================================================================== -->
+    <section class="community-full-experience" id="comunidad">
+      <div class="section-header">
+        <span class="section-tag">De la plancha a la mesa</span>
+        <h2 class="section-title">LA EXPERIENCIA COMPLETA <span>SMASH BURGER</span></h2>
+        <p class="section-lead">Todo sabe mejor cuando se comparte. Conviértete en el maestro parrillero de tus reuniones con amigos y familia.</p>
+      </div>
+
+      <div class="experience-showcase-grid">
+        <!-- Imagen 3: La Experiencia Completa (Encuadre 1:1 nativo sin recortes) -->
+        <div class="experience-photo-frame">
+          <img src="images/experiencia-amigos.jpg" alt="Amigos compartiendo y cocinando smash burgers alrededor de la plancha" class="framed-square-img">
+        </div>
+
+        <div class="experience-details-box">
+          <!-- Las 4 Pastillas Clave de la Foto 3 con bordes industriales rectos -->
+          <div class="action-pills-bar">
+            <div class="action-squircle-card">
+              <div class="action-squircle-icon">🍳</div>
+              <div>
+                <div class="action-squircle-name">Cocina</div>
+                <div class="action-squircle-sub">El ritual del fuego y la plancha</div>
+              </div>
+            </div>
+            <div class="action-squircle-card">
+              <div class="action-squircle-icon">🔨</div>
+              <div>
+                <div class="action-squircle-name">Smashea</div>
+                <div class="action-squircle-sub">Presión uniforme de acero 304</div>
+              </div>
+            </div>
+            <div class="action-squircle-card">
+              <div class="action-squircle-icon">🍔</div>
+              <div>
+                <div class="action-squircle-name">Comparte</div>
+                <div class="action-squircle-sub">En cestas retro con patatas</div>
+              </div>
+            </div>
+            <div class="action-squircle-card">
+              <div class="action-squircle-icon">✨</div>
+              <div>
+                <div class="action-squircle-name">Disfruta</div>
+                <div class="action-squircle-sub">El bocado crujiente y jugoso</div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Tarjeta de Llamada a Instagram con bordes industriales -->
+          <div class="community-box">
+            <span class="section-tag" style="font-size: 1.4rem;">¡Presume tu costra!</span>
+            <h3 class="section-title" style="font-size: 1.85rem; margin-bottom: 8px;">ÚNETE A LA COMUNIDAD <span>SMASHFIRE</span></h3>
+            <p class="section-lead" style="margin-bottom: 16px; font-size: 0.9rem;">
+              ¿Acabas de hacer tu primer smash burger con tu kit? ¡Sube tu foto o reel, etiqueta a nuestra cuenta oficial y compártelo con nosotros!
+            </p>
+
+            <div class="insta-hashtag-badge">
+              #SmashFireBurger
+            </div>
+            <p style="color: var(--gold-light); font-size: 0.95rem; font-weight: 700; margin-top: 8px;">
+              Etiqueta a <strong style="color: #fff;">@SmashFire_es</strong> en tus publicaciones para aparecer en nuestros destacados oficiales.
+            </p>
+
+            <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" class="insta-cta-btn">
+              <span>📸</span> Seguir a @SmashFire_es en Instagram
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ====================================================================
+         SECCIÓN 6: CONSEJOS PRO (PLACAS DE BRONCE DE MAESTRO PARRILLERO)
+         ==================================================================== -->
+    <section class="pro-tips-section" id="tips">
+      <div class="section-header">
+        <span class="section-tag">Secretos técnicos de taller</span>
+        <h2 class="section-title">CONSEJOS PRO <span>SMASHFIRE</span></h2>
+        <p class="section-lead">Seis reglas de oro que transforman cualquier hamburguesa casera en una obra de arte de alta costra.</p>
+      </div>
+
+      <div class="tips-grid">
+        <div class="tip-plate">
+          <div class="tip-plate-number">01</div>
+          <h3 class="tip-plate-title">Choque Térmico</h3>
+          <p class="tip-plate-text">
+            La carne debe estar a temperatura de frigorífico (4°C) y la plancha al rojo vivo (230°C+). Ese contraste violento es el que desata la caramelización inmediata de los azúcares y proteínas.
+          </p>
+        </div>
+
+        <div class="tip-plate">
+          <div class="tip-plate-number">02</div>
+          <h3 class="tip-plate-title">Papel de Horno</h3>
+          <p class="tip-plate-text">
+            Si notas que la carne cruda tiende a pegarse a la base de la prensa al aplastar, coloca un cuadrado de papel vegetal entre la carne y la prensa. Se desprende limpio y sin resistencia.
+          </p>
+        </div>
+
+        <div class="tip-plate">
+          <div class="tip-plate-number">03</div>
+          <h3 class="tip-plate-title">Prohibido Re-aplastar</h3>
+          <p class="tip-plate-text">
+            El aplastamiento solo se hace UNA VEZ durante los primeros 10 segundos. Si vuelves a aplastar tras dar la vuelta, expulsarás todo el jugo interno y la hamburguesa quedará seca.
+          </p>
+        </div>
+
+        <div class="tip-plate">
+          <div class="tip-plate-number">04</div>
+          <h3 class="tip-plate-title">El Golpe de Vapor</h3>
+          <p class="tip-plate-text">
+            Cuando tapes el queso con la campana cloche, salpica unas 3 gotas de agua sobre la plancha justo antes de cerrar. La nube de vapor fundirá quesos curados en menos de 15 segundos.
+          </p>
+        </div>
+
+        <div class="tip-plate">
+          <div class="tip-plate-number">05</div>
+          <h3 class="tip-plate-title">Humo sin Aceite</h3>
+          <p class="tip-plate-text">
+            No eches chorros de aceite a la plancha. La carne necesita contacto seco y fricción con el acero caliente para pegarse y crear la costra. Su propia grasa (20%) hará el resto.
+          </p>
+        </div>
+
+        <div class="tip-plate">
+          <div class="tip-plate-number">06</div>
+          <h3 class="tip-plate-title">Barrera en el Pan</h3>
+          <p class="tip-plate-text">
+            Tostar el pan brioche con mantequilla caliente en la plancha crea una corteza dorada impermeable que evita que los jugos de la carne ablanden la base del pan durante el servicio.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ====================================================================
+         SECCIÓN 7: CUIDADO Y MANTENIMIENTO DEL ACERO 304
+         ==================================================================== -->
+    <section class="care-section" id="cuidados">
+      <div class="section-header">
+        <span class="section-tag">Garantía de durabilidad de por vida</span>
+        <h2 class="section-title">CUIDADO Y <span>MANTENIMIENTO 304</span></h2>
+        <p class="section-lead">El acero inoxidable quirúrgico AISI 304 no se oxida ni se deteriora si sigues este sencillo protocolo de limpieza.</p>
+      </div>
+
+      <div class="care-grid">
+        <!-- Lo que Sí debes hacer -->
+        <div class="care-card good">
+          <h3 class="care-card-title">✅ Lo que SÍ debes hacer</h3>
+          <div class="care-item">
+            <strong>Lavado con agua templada y jabón neutro:</strong>
+            Utiliza una esponja suave o bayeta de microfibra tras cada sesión de cocina. Apto para lavavajillas.
+          </div>
+          <div class="care-item">
+            <strong>Secado inmediato con paño seco:</strong>
+            No dejes que el agua se evapore sola sobre el acero para evitar manchas de cal y conservar el acabado pulido.
+          </div>
+          <div class="care-item">
+            <strong>Desglasado en caliente:</strong>
+            Mientras la plancha o espátula esté templada, un poco de agua caliente desincrustará los restos caramelizados al instante.
+          </div>
+          <div class="care-item">
+            <strong>Uso de papel en las cestas:</strong>
+            Coloca siempre el papel encerado a cuadros en las cestas metálicas para protegerlas de manchas de salsa o grasa.
+          </div>
+        </div>
+
+        <!-- Lo que NO debes hacer -->
+        <div class="care-card bad">
+          <h3 class="care-card-title">❌ Lo que NUNCA debes hacer</h3>
+          <div class="care-item">
+            <strong>No usar lejías ni limpiadores con cloro:</strong>
+            El cloro ataca la capa pasiva del acero inoxidable y puede generar picaduras corrosivas permanentes.
+          </div>
+          <div class="care-item">
+            <strong>No usar estropajos de alambre agresivos:</strong>
+            Podrían rayar el pulido de la prensa y la campana. Si hay grasa pegada, usa pasta de bicarbonato y vinagre.
+          </div>
+          <div class="care-item">
+            <strong>No meter las cestas a hornos o freidoras:</strong>
+            Las cestas metálicas diner son exclusivamente para servicio y presentación a mesa, no para cocinar con ellas.
+          </div>
+          <div class="care-item">
+            <strong>No guardar en lugares húmedos:</strong>
+            Guarda el kit limpio y seco dentro de su caja o cajón hasta tu próxima sesión smash.
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ====================================================================
+         SECCIÓN 8: PREGUNTAS FRECUENTES (FAQ ACORDEÓN)
+         ==================================================================== -->
+    <section class="faq-section" id="faq">
+      <div class="section-header">
+        <span class="section-tag">Resolvemos tus dudas al instante</span>
+        <h2 class="section-title">SOLUCIÓN DE <span>PROBLEMAS (FAQ)</span></h2>
+        <p class="section-lead">Respuestas a los problemas más comunes al preparar tus primeras smash burgers en casa.</p>
+      </div>
+
+      <div class="faq-accordion">
+        <div class="faq-item">
+          <button class="faq-question" onclick="toggleFaq(this)">
+            <span>¿Por qué la carne se me queda pegada a la prensa al aplastarla?</span>
+            <span class="faq-chevron">▾</span>
+          </button>
+          <div class="faq-answer">
+            <p>
+              Es muy común cuando la carne está húmeda o recién picada. <strong>Solución:</strong> Coloca un cuadrado de papel de horno vegetal entre la bola de carne y la base de la prensa antes de aplastar, o unta una gota de aceite en la base de la prensa.
+            </p>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-question" onclick="toggleFaq(this)">
+            <span>¿Por qué no consigo esa costra marrón crujiente y la carne parece cocida?</span>
+            <span class="faq-chevron">▾</span>
+          </button>
+          <div class="faq-answer">
+            <p>
+              Esto ocurre casi siempre por falta de temperatura o exceso de líquido en la carne. <strong>Solución:</strong> Asegúrate de que la plancha esté a más de 220°C (humo tenue) y no pongas aceite previo en la plancha. La carne debe tocar el metal ardiente directamente para generar la reacción de Maillard.
+            </p>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-question" onclick="toggleFaq(this)">
+            <span>¿Por qué mi hamburguesa me ha quedado seca por dentro?</span>
+            <span class="faq-chevron">▾</span>
+          </button>
+          <div class="faq-answer">
+            <p>
+              Dos motivos principales: la carne era demasiado magra (menos del 15% de grasa) o la aplastaste después de haberle dado la vuelta. <strong>Solución:</strong> Pide a tu carnicero un picado con 20% de grasa (aguja o picaña) y recuerda aplastar ÚNICAMENTE durante los primeros 10 segundos.
+            </p>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-question" onclick="toggleFaq(this)">
+            <span>¿Puedo usar el kit sobre una sartén antiadherente de teflón normal?</span>
+            <span class="faq-chevron">▾</span>
+          </button>
+          <div class="faq-answer">
+            <p>
+              No es recomendable. Las sartenes con recubrimiento de teflón no deben calentarse a temperaturas tan extremas (más de 220°C) y la fuerte presión con la prensa de acero puede dañar la superficie antiadherente. Te recomendamos usar planchas lisas de hierro fundido, sartenes de hierro mineral o planchas de acero inoxidable.
+            </p>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-question" onclick="toggleFaq(this)">
+            <span>¿Las cestas metálicas y el papel son reutilizables?</span>
+            <span class="faq-chevron">▾</span>
+          </button>
+          <div class="faq-answer">
+            <p>
+              Las cestas metálicas son de acero lavable y duran toda la vida. Las hojas de papel encerado a cuadros incluidas son desechables para mantener la máxima higiene; cuando se te terminen, puedes adquirir cualquier recambio de papel encerado estándar tamaño diner de 30x30 cm.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ====================================================================
+         SECCIÓN 9: CERTIFICADOS Y VISOR MODAL PROTEGIDO
+         ==================================================================== -->
+    <section class="cert-section" id="certificados">
+      <div class="section-header">
+        <span class="section-tag">Garantía alimentaria europea</span>
+        <h2 class="section-title">CALIDAD DE MATERIALES Y <span>CERTIFICADOS</span></h2>
+      </div>
+
+      <div class="cert-card-wrap">
+        <div>
+          <div class="steel-seal-plaque">
+            <div class="seal-circle-emblem">
+              <span>ACERO</span>
+              <span>304</span>
+            </div>
+            <div class="seal-details">
+              <strong>Acero Inoxidable Quirúrgico AISI 304 (18/8)</strong>
+              <span>100% Grado Alimentario · Libre de BPA, PTFE y Plomo</span>
+            </div>
+          </div>
+          <p style="color: #cfc4ba; font-size: 0.95rem; line-height: 1.6; max-width: 600px;">
+            A diferencia de los kits baratos con recubrimientos químicos antiadherentes que se desprenden con el calor, las herramientas SmashFire están fabricadas en bloque sólido de acero inoxidable austenítico 304. Resistente a la corrosión, seguro para la salud y avalado por ensayos de laboratorio europeos.
+          </p>
+        </div>
+
+        <div>
+          <button class="btn-view-cert" onclick="openCertModal()">
+            🛡️ Consultar Certificado Oficial
+          </button>
+        </div>
+      </div>
+    </section>
+
+    <!-- ====================================================================
+         SECCIÓN 10: BIBLIOTECA DE RECETAS (PRÓXIMAMENTE)
+         ==================================================================== -->
+    <section class="recipes-library-section">
+      <div class="section-header">
+        <span class="section-tag">Contenido en constante expansión</span>
+        <h2 class="section-title">BIBLIOTECA DE RECETAS <span>SMASHFIRE</span></h2>
+        <p class="section-lead">Esta página irá incorporando nuevas recetas exclusivas creadas por chefs y por nuestra comunidad. Aquí tienes un adelanto de lo que viene:</p>
+      </div>
+
+      <div class="recipes-vault-grid">
+        <div class="vault-card">
+          <span class="vault-tag">Próximamente</span>
+          <h3 class="vault-title">Oklahoma Onion Smash</h3>
+          <p class="vault-desc">La mítica hamburguesa de Oklahoma: cebolla dulce cortada en mandolina ultrafina, prensada directamente dentro de la carne mientras se carameliza.</p>
+        </div>
+
+        <div class="vault-card">
+          <span class="vault-tag">Próximamente</span>
+          <h3 class="vault-title">Bacon Jam & Truffle</h3>
+          <p class="vault-desc">Mermelada artesanal de panceta ahumada con cebolla confitada, mayonesa trufada suave y doble cheddar madurado fundido al vapor.</p>
+        </div>
+
+        <div class="vault-card">
+          <span class="vault-tag">Próximamente</span>
+          <h3 class="vault-title">Spicy Jalapeño & Chipotle</h3>
+          <p class="vault-desc">Para los amantes del picante: jalapeños encurtidos en casa, salsa ahumada de chipotle, queso Pepper Jack y crujiente de cebolla frita.</p>
+        </div>
+
+        <div class="vault-card">
+          <span class="vault-tag">Próximamente</span>
+          <h3 class="vault-title">Classic American Diner</h3>
+          <p class="vault-desc">La receta purista de los años 50 con salsa especial tártara americana, pepinillos crujientes y triple patty en pan de patata tostado.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ====================================================================
+         SECCIÓN 11: CONTACTO DISCRETO Y ATENCIÓN AL CLIENTE
+         ==================================================================== -->
+    <section class="contact-section">
+      <div class="contact-card">
+        <span class="section-tag">¿Dudas con tu kit o tu plancha?</span>
+        <h3 style="font-family: 'Anton', sans-serif; font-size: 1.6rem; color: #fff; text-transform: uppercase;">
+          ATENCIÓN DIRECTA AL CLIENTE
+        </h3>
+        <p style="color: var(--text-muted); font-size: 0.92rem; margin-top: 8px;">
+          Si tienes cualquier consulta sobre el uso de tus utensilios, los materiales o quieres recomendarnos una receta, escríbenos directamente. Te responderemos personalmente en menos de 24 horas:
+        </p>
+
+        <div>
+          <a href="mailto:info@smashfire.es" class="contact-email-link">
+            <span>✉️</span> info@smashfire.es
+          </a>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ====================================================================
+       FOOTER
+       ==================================================================== -->
+  <footer>
+    <div class="container">
+      <div class="footer-brand-box">
+        <img src="images/logo.png" alt="SmashFire Logo Oficial" class="footer-logo-img">
+      </div>
+      <div class="footer-links">
+        <a href="#proceso">Los 4 Pasos</a>
+        <a href="#momento-smash">El Momento Smash</a>
+        <a href="#receta">Receta</a>
+        <a href="#diner">Estilo Diner</a>
+        <a href="#comunidad">Comunidad</a>
+        <a href="#tips">Tips Pro</a>
+        <a href="#faq">Preguntas Frecuentes</a>
+        <a href="#certificados">Certificados</a>
+        <a href="#" onclick="openLegalModal('aviso')">Aviso Legal</a>
+        <a href="#" onclick="openLegalModal('privacidad')">Privacidad</a>
+        <a href="#" onclick="openLegalModal('cookies')">Cookies</a>
+      </div>
+      <p class="footer-copy">
+        © 2026 SmashFire — Todos los derechos reservados. Página oficial de soporte y experiencia postcompra.
+      </p>
+    </div>
+  </footer>
+
+  <!-- ====================================================================
+       MODAL: VISOR DE CERTIFICADOS (REQUISITO: SOLO VISUALIZACIÓN, NO DESCARGABLE)
+       ==================================================================== -->
+  <div class="modal-overlay" id="cert-modal" onclick="closeCertModal(event)">
+    <div class="cert-modal-box" onclick="event.stopPropagation()">
+      <div class="cert-modal-header">
+        <div style="display: flex; align-items: center; gap: 10px;">
+          <img src="images/logo.png" alt="SmashFire" style="height: 32px; width: auto; object-fit: contain;">
+          <h3>CERTIFICADO OFICIAL DE CONFORMIDAD ALIMENTARIA</h3>
+        </div>
+        <button class="btn-close-modal" onclick="closeCertModal()">&times;</button>
+      </div>
+
+      <div class="cert-document-preview" oncontextmenu="return false;">
+        <div class="cert-watermark">SOLO VISUALIZACIÓN</div>
+
+        <div style="border-bottom: 2px solid #ddd; padding-bottom: 12px; margin-bottom: 16px; display: flex; justify-content: space-between; align-items: center; gap: 12px; flex-wrap: wrap;">
+          <div>
+            <h4 style="font-size: 1.2rem; font-weight: 800; color: #111;">LABORATORY COMPLIANCE REPORT</h4>
+            <p style="font-size: 0.75rem; color: #666;">Ref: SF-CERT-304-2026-EU · Food Contact Safety Verification</p>
+          </div>
+          <div style="display: flex; align-items: center; gap: 10px;">
+            <img src="images/logo.png" alt="SmashFire" style="height: 38px; width: auto; object-fit: contain;">
+            <div style="font-weight: 800; color: #b83000; font-size: 0.9rem;">ENSAYO CONFORME</div>
+          </div>
+        </div>
+
+        <p style="font-size: 0.85rem; line-height: 1.6; color: #333; margin-bottom: 14px;">
+          <strong>Producto:</strong> SmashFire Heavy Duty Burger Press & Cloche Melting Dome.<br>
+          <strong>Aleación ensayada:</strong> Acero Inoxidable AISI 304 (X5CrNi18-10 / 1.4301).<br>
+          <strong>Normativa aplicable:</strong> Reglamento (CE) Nº 1935/2004 sobre materiales y objetos destinados a entrar en contacto con alimentos, y Directiva FDA 21 CFR 175.300.
+        </p>
+
+        <div class="cert-table-responsive">
+          <table style="width: 100%; border-collapse: collapse; font-size: 0.8rem; margin: 16px 0; color: #333; min-width: 440px;">
+            <thead>
+              <tr style="background: #f0f0f0; border-bottom: 2px solid #ccc; text-align: left;">
+                <th style="padding: 6px;">Parámetro</th>
+                <th style="padding: 6px;">Límite Legal</th>
+                <th style="padding: 6px;">Resultado</th>
+                <th style="padding: 6px;">Dictamen</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr style="border-bottom: 1px solid #eee;">
+                <td style="padding: 6px;">Migración global (Simulante D2)</td>
+                <td style="padding: 6px;">&lt; 10 mg/dm²</td>
+                <td style="padding: 6px;">&lt; 1.2 mg/dm²</td>
+                <td style="padding: 6px; color: #28a745; font-weight: 700;">APTO</td>
+              </tr>
+              <tr style="border-bottom: 1px solid #eee;">
+                <td style="padding: 6px;">Contenido de Plomo (Pb)</td>
+                <td style="padding: 6px;">&lt; 0.010 mg/kg</td>
+                <td style="padding: 6px;">No detectable</td>
+                <td style="padding: 6px; color: #28a745; font-weight: 700;">APTO</td>
+              </tr>
+              <tr style="border-bottom: 1px solid #eee;">
+                <td style="padding: 6px;">Contenido de Cadmio (Cd)</td>
+                <td style="padding: 6px;">&lt; 0.005 mg/kg</td>
+                <td style="padding: 6px;">No detectable</td>
+                <td style="padding: 6px; color: #28a745; font-weight: 700;">APTO</td>
+              </tr>
+              <tr>
+                <td style="padding: 6px;">Recubrimientos PTFE / PFOA / BPA</td>
+                <td style="padding: 6px;">Exento</td>
+                <td style="padding: 6px;">100% Acero sólido</td>
+                <td style="padding: 6px; color: #28a745; font-weight: 700;">APTO</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <div class="cert-seal-stamp">
+          ✓ CERTIFICACIÓN DE SEGURIDAD ALIMENTARIA APROBADA
+        </div>
+      </div>
+
+      <div class="cert-security-notice">
+        🔒 Documento oficial verificado para clientes de SmashFire. Descarga deshabilitada de acuerdo con la política de seguridad y propiedad intelectual.
+      </div>
+    </div>
+  </div>
+
+  <!-- ====================================================================
+       MODAL: TEXTOS LEGALES (AVISO LEGAL, PRIVACIDAD, COOKIES)
+       ==================================================================== -->
+  <div class="modal-overlay" id="legal-modal" onclick="closeLegalModal(event)">
+    <div class="cert-modal-box" onclick="event.stopPropagation()">
+      <div class="cert-modal-header">
+        <h3 id="legal-modal-title">AVISO LEGAL</h3>
+        <button class="btn-close-modal" onclick="closeLegalModal()">&times;</button>
+      </div>
+      <div style="padding: 24px; color: #ddd; font-size: 0.9rem; line-height: 1.6;" id="legal-modal-content">
+        <!-- Contenido inyectado dinámicamente -->
+      </div>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
