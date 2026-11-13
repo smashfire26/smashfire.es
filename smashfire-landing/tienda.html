@@ -1,0 +1,481 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Kit Oficial Smash Burger Acero Inoxidable 304 | Tienda SmashFire</title>
+  <meta name="description" content="Compra el Kit Oficial Smash Burger SmashFire en Acero Inoxidable 304 apto para uso alimentario. Prensa maciza 14cm, campana cloche, espátula biselada y cestas diner. Compra segura con Shopify." />
+  <link rel="canonical" href="https://smashfire.es/tienda.html" />
+
+  <!-- Metadatos Open Graph / Facebook -->
+  <meta property="og:type" content="product" />
+  <meta property="og:title" content="Kit Oficial Smash Burger SmashFire 304" />
+  <meta property="og:description" content="El único kit de smash burgers en acero inoxidable 304 para siempre. Sin óxido, sin teflón y con antiadherencia natural. Compra con Shopify." />
+  <meta property="og:url" content="https://smashfire.es/tienda.html" />
+  <meta property="og:image" content="https://smashfire.es/images/diner-presentacion.jpg" />
+
+  <!-- Schema.org Microdatos para Producto y Oferta de Google -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org/",
+    "@type": "Product",
+    "name": "Kit Oficial Smash Burger SmashFire Acero Inoxidable 304",
+    "image": [
+      "https://smashfire.es/images/diner-presentacion.jpg",
+      "https://smashfire.es/images/momento-smash.jpg",
+      "https://smashfire.es/images/monta-tu-smash.jpg"
+    ],
+    "description": "Kit profesional completo de smash burgers fabricado íntegramente en Acero Inoxidable AISI 304 de grado apto para uso alimentario. Incluye prensa 14 cm, campana cloche, espátula biselada, sazonador, 2 cestas diner y 50 hojas de papel antigrasa.",
+    "brand": {
+      "@type": "Brand",
+      "name": "SmashFire"
+    },
+    "sku": "SF-KIT-304-PRO",
+    "offers": {
+      "@type": "Offer",
+      "url": "https://smashfire.es/tienda.html",
+      "priceCurrency": "EUR",
+      "price": "49.99",
+      "priceValidUntil": "2027-12-31",
+      "itemCondition": "https://schema.org/NewCondition",
+      "availability": "https://schema.org/InStock",
+      "seller": {
+        "@type": "Organization",
+        "name": "SmashFire"
+      }
+    }
+  }
+  </script>
+
+  <!-- Tipografías de Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Anton&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Yellowtail&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+
+  <!-- Lienzo interactivo de chispas y brasas -->
+  <canvas id="embers-canvas"></canvas>
+
+  <!-- ====================================================================
+       SISTEMA DE ICONOS VECTORIALES DE MARCA (SVG NATIVO - CERO EMOJIS)
+       ==================================================================== -->
+  <svg id="sf-svg-library" style="display: none;" aria-hidden="true">
+    <symbol id="sf-flame" viewBox="0 0 24 24">
+      <path fill="currentColor" d="M12 23c-4.97 0-9-3.95-9-8.82 0-3.91 2.51-7.79 5.86-11.45.62-.68 1.74-.25 1.76.66.07 2.45 1.13 4.29 2.5 5.25.13-.97.43-1.95.96-2.88.36-.63 1.25-.66 1.63-.04 1.74 2.8 3.29 6.22 3.29 8.46 0 4.87-4.03 8.82-7 8.82zm-1-6c0 1.66 1.34 3 3 3 .83 0 1.58-.34 2.12-.88C15.68 18.06 15 16.63 15 15c0-1.8 1.12-3.35 2.72-3.96-.34-.96-.86-1.87-1.54-2.67-1.78 1.83-3.18 3.73-3.18 5.63z"/>
+    </symbol>
+
+    <symbol id="sf-cart" viewBox="0 0 24 24">
+      <path fill="currentColor" d="M17 18c-1.1 0-1.99.9-1.99 2s.89 2 1.99 2 2-.9 2-2-.9-2-2-2zM7 18c-1.1 0-1.99.9-1.99 2S5.9 22 7 22s2-.9 2-2-.9-2-2-2zm0-3l1.1-2h7.45c.75 0 1.41-.41 1.75-1.03L21.7 4H5.21l-.94-2H1v2h2l3.6 7.59-1.35 2.44C4.52 15.37 5.48 17 7 17h12v-2H7z"/>
+    </symbol>
+
+    <symbol id="sf-shield" viewBox="0 0 24 24">
+      <path fill="currentColor" d="M12 1L3 5v6c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V5l-9-4zm-2 16l-4-4 1.41-1.41L10 14.17l6.59-6.59L18 9l-8 8z"/>
+    </symbol>
+
+    <symbol id="sf-star" viewBox="0 0 24 24">
+      <path fill="currentColor" d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/>
+    </symbol>
+
+    <symbol id="sf-check" viewBox="0 0 24 24">
+      <path fill="currentColor" d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/>
+    </symbol>
+
+    <symbol id="sf-arrow-right" viewBox="0 0 24 24">
+      <path fill="currentColor" d="M12 4l-1.41 1.41L16.17 11H4v2h12.17l-5.58 5.59L12 20l8-8z"/>
+    </symbol>
+
+    <symbol id="sf-instagram" viewBox="0 0 24 24">
+      <path fill="currentColor" d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/>
+    </symbol>
+
+    <symbol id="sf-truck" viewBox="0 0 24 24">
+      <path fill="currentColor" d="M20 8h-3V4H1v13h2c0 1.66 1.34 3 3 3s3-1.34 3-3h6c0 1.66 1.34 3 3 3s3-1.34 3-3h2v-5l-3-4zM6 18.5c-.83 0-1.5-.67-1.5-1.5s.67-1.5 1.5-1.5 1.5.67 1.5 1.5-.67 1.5-1.5 1.5zm13.5-9l1.96 2.5H17V9.5h2.5zm-1.5 9c-.83 0-1.5-.67-1.5-1.5s.67-1.5 1.5-1.5 1.5.67 1.5 1.5-.67 1.5-1.5 1.5z"/>
+    </symbol>
+
+    <symbol id="sf-sparkle" viewBox="0 0 24 24">
+      <path fill="currentColor" d="M12 2l2.4 7.2L22 12l-7.6 2.8L12 22l-2.4-7.2L2 12l7.6-2.8L12 2z"/>
+    </symbol>
+  </svg>
+
+  <!-- Barra de aviso superior -->
+  <div class="top-notice-bar">
+    <svg class="sf-icon"><use href="#sf-flame"></use></svg>
+    <span>ENVÍO RÁPIDO 24/48H A TODA ESPAÑA Y EUROPA · ACERO INOXIDABLE 304</span>
+    <svg class="sf-icon"><use href="#sf-flame"></use></svg>
+  </div>
+
+  <!-- Header Global Oficial -->
+  <header>
+    <div class="container">
+      <div class="nav-wrapper">
+        <a href="index.html" class="brand-logo" aria-label="SmashFire Home">
+          <img src="images/logo.png" alt="SmashFire Logo Oficial" class="header-logo-img">
+        </a>
+
+        <!-- Menú de Navegación Principal -->
+        <nav class="main-nav" id="main-nav">
+          <a href="index.html" class="main-nav-link">Inicio</a>
+          <a href="tienda.html" class="main-nav-link active">El Kit</a>
+          <a href="recetas.html" class="main-nav-link">Recetas</a>
+          <a href="nosotros.html" class="main-nav-link">Nosotros</a>
+          <a href="contacto.html" class="main-nav-link">Contacto</a>
+        </nav>
+
+        <div class="header-right-group">
+          <!-- Botón Compra Shopify -->
+          <a href="https://tienda.smashfire.es/cart/59395325952264:1?storefront=true" class="btn-nav-buy">
+            <svg class="sf-icon"><use href="#sf-cart"></use></svg>
+            <span>Comprar Kit</span>
+          </a>
+
+          <!-- Selector de idiomas -->
+          <div class="lang-selector-wrap">
+            <button class="lang-btn" id="lang-btn" type="button" aria-expanded="false" aria-label="Seleccionar idioma">
+              <span class="lang-code-pill">ES</span>
+              <span class="lang-chevron">▾</span>
+            </button>
+            <ul class="lang-menu" id="lang-menu">
+              <li><button class="active" onclick="switchLanguage('es')"><span class="lang-code-pill">ES</span> Español</button></li>
+              <li><button onclick="switchLanguage('pt')"><span class="lang-code-pill">PT</span> Português (Em breve)</button></li>
+              <li><button onclick="switchLanguage('en')"><span class="lang-code-pill">EN</span> English (Coming soon)</button></li>
+            </ul>
+          </div>
+
+          <!-- Botón Menú Móvil -->
+          <button type="button" class="mobile-menu-btn" id="mobile-menu-toggle" aria-label="Abrir menú de navegación">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor">
+              <path d="M3 18h18v-2H3v2zm0-5h18v-2H3v2zm0-7v2h18V6H3z"/>
+            </svg>
+          </button>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <!-- Header Hero de la Tienda -->
+    <section class="page-hero-banner">
+      <div class="container">
+        <div class="page-hero-badge">
+          <svg class="sf-icon"><use href="#sf-shield"></use></svg>
+          <span>TIENDA OFICIAL SMASHFIRE · MODELO 2026</span>
+        </div>
+        <h1 class="page-hero-title">
+          EL KIT OFICIAL DE <span class="text-fire">ACERO INOXIDABLE 304</span>
+        </h1>
+        <p class="page-hero-lead">
+          Diseñado sin compromisos para los apasionados del smash burger auténtico. Olvídate del óxido, de los antiadherentes con teflón y de las prensas débiles. El estándar definitivo para toda la vida.
+        </p>
+      </div>
+    </section>
+
+    <!-- Ficha de Producto y Galería -->
+    <section class="product-showcase-section" id="comprar">
+      <div class="product-detail-layout">
+        
+        <!-- Galería de Fotos Interactiva -->
+        <div class="product-gallery-box">
+          <div class="product-main-view">
+            <img id="main-product-img" src="images/diner-presentacion.jpg" alt="Kit Oficial SmashFire 304 Presentación Completa" />
+          </div>
+          <div class="product-thumbnails-strip">
+            <button type="button" class="product-thumb-btn active" onclick="changeProductImage(this, 'images/diner-presentacion.jpg', 'Presentación Completa Kit SmashFire 304')">
+              <img src="images/diner-presentacion.jpg" alt="Miniatura Kit SmashFire" />
+            </button>
+            <button type="button" class="product-thumb-btn" onclick="changeProductImage(this, 'images/momento-smash.jpg', 'Acción de Smash con Prensa 304')">
+              <img src="images/momento-smash.jpg" alt="Miniatura Prensa en Acción" />
+            </button>
+            <button type="button" class="product-thumb-btn" onclick="changeProductImage(this, 'images/monta-tu-smash.jpg', 'Montaje Burger Doble con Queso Fundido')">
+              <img src="images/monta-tu-smash.jpg" alt="Miniatura Montaje Burger" />
+            </button>
+            <button type="button" class="product-thumb-btn" onclick="changeProductImage(this, 'images/banner-pasos.jpg', 'Detalle de Componentes y Cloche')">
+              <img src="images/banner-pasos.jpg" alt="Miniatura Componentes" />
+            </button>
+            <button type="button" class="product-thumb-btn" onclick="changeProductImage(this, 'images/banner-smash-4pasos.jpg', 'El Ritual Smash en 4 Pasos')">
+              <img src="images/banner-smash-4pasos.jpg" alt="Miniatura 4 Pasos" />
+            </button>
+          </div>
+        </div>
+
+        <!-- Columna de Información y Compra Shopify -->
+        <div class="product-info-column">
+          <span class="product-brand-tag">SMASHFIRE PROFESSIONAL EQUIPMENT · SERIE 304</span>
+          <h2 class="product-headline">KIT COMPLETO SMASH BURGER PROFESIONAL</h2>
+
+          <div class="product-rating-row">
+            <div class="product-stars">
+              <svg class="sf-icon" style="width: 16px; height: 16px;"><use href="#sf-star"></use></svg>
+              <svg class="sf-icon" style="width: 16px; height: 16px;"><use href="#sf-star"></use></svg>
+              <svg class="sf-icon" style="width: 16px; height: 16px;"><use href="#sf-star"></use></svg>
+              <svg class="sf-icon" style="width: 16px; height: 16px;"><use href="#sf-star"></use></svg>
+              <svg class="sf-icon" style="width: 16px; height: 16px;"><use href="#sf-star"></use></svg>
+            </div>
+            <span class="product-reviews-count">5.0 / 5.0 (489 valoraciones verificadas)</span>
+          </div>
+
+          <!-- Bloque de Precio y Stock -->
+          <div class="product-pricing-card">
+            <div class="price-main-display">
+              <span class="price-current">49,99 €</span>
+              <span class="price-iva-tag">IVA incluido · Envío gratis</span>
+            </div>
+            <span class="price-stock-status">
+              <svg class="sf-icon" style="width: 14px; height: 14px;"><use href="#sf-check"></use></svg>
+              En Stock · Entrega 24/48h
+            </span>
+          </div>
+
+          <p class="product-summary-desc">
+            Forjado en <strong>Acero Inoxidable AISI 304 (18/8)</strong> de grado apto para uso alimentario. Desarrollado para resistir más de 300 °C sobre plancha caliente, brasas o sartén sin doblarse, sin desprender químicos y sin acumular óxido jamás.
+          </p>
+
+          <!-- Qué incluye el kit -->
+          <div class="product-includes-mini">
+            <div class="product-includes-mini-title">
+              <svg class="sf-icon"><use href="#sf-flame"></use></svg>
+              <span>El Pack Completo Incluye:</span>
+            </div>
+            <ul class="product-includes-list">
+              <li><svg class="sf-icon"><use href="#sf-check"></use></svg> 1x Prensa Smash 14 cm (2.5 mm)</li>
+              <li><svg class="sf-icon"><use href="#sf-check"></use></svg> 1x Campana Cloche con pomo frío</li>
+              <li><svg class="sf-icon"><use href="#sf-check"></use></svg> 1x Espátula Biselada afilada</li>
+              <li><svg class="sf-icon"><use href="#sf-check"></use></svg> 1x Sazonador Pro dosificador</li>
+              <li><svg class="sf-icon"><use href="#sf-check"></use></svg> 2x Cestas Diner Americanas rojas</li>
+              <li><svg class="sf-icon"><use href="#sf-check"></use></svg> 50x Hojas Papel Antigrasa cuadros</li>
+            </ul>
+          </div>
+
+          <!-- Acciones de Compra Conectadas a Shopify -->
+          <div class="product-cta-group">
+            <div class="product-qty-row">
+              <span style="font-size: 0.9rem; font-weight: 700; color: #d1c7bd;">Cantidad:</span>
+              <div class="qty-selector-box">
+                <button type="button" class="qty-btn" onclick="updateQuantity(-1)">-</button>
+                <input type="text" id="product-qty-input" class="qty-input" value="1" readonly />
+                <button type="button" class="qty-btn" onclick="updateQuantity(1)">+</button>
+              </div>
+            </div>
+
+            <!-- Botón de compra conectado a Shopify -->
+            <a href="https://tienda.smashfire.es/cart/59395325952264:1?storefront=true" class="btn-shopify-checkout" id="btn-comprar-shopify">
+              <svg class="sf-icon" style="width: 24px; height: 24px;"><use href="#sf-cart"></use></svg>
+              <span>Comprar Ahora con Shopify</span>
+            </a>
+
+            <div class="shopify-payment-icons">
+              <span>Pago seguro y encriptado con Shopify · Visa, Mastercard, Apple Pay, Google Pay, PayPal</span>
+            </div>
+          </div>
+
+          <!-- Badges de confianza -->
+          <div class="trust-badges-grid">
+            <div class="trust-badge-item">
+              <svg class="sf-icon" style="width: 22px; height: 22px;"><use href="#sf-truck"></use></svg>
+              <div><strong>Envío 24/48h</strong><br>Express en península</div>
+            </div>
+            <div class="trust-badge-item">
+              <svg class="sf-icon" style="width: 22px; height: 22px;"><use href="#sf-shield"></use></svg>
+              <div><strong>Garantía Total 304</strong><br>Acero eterno sin óxido</div>
+            </div>
+            <div class="trust-badge-item">
+              <svg class="sf-icon" style="width: 22px; height: 22px;"><use href="#sf-sparkle"></use></svg>
+              <div><strong>Devolución 14 días</strong><br>Sin preguntas</div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+      <!-- Ficha Técnica Expandida con Pestañas Interactivas -->
+      <div class="product-specs-section">
+        <h3 style="font-family: var(--font-heading); font-size: 1.8rem; color: #fff; text-transform: uppercase;">
+          DETALLES DE INGENIERÍA & EXPERIENCIA
+        </h3>
+        <p style="color: #a89f91; font-size: 0.95rem; margin-top: 6px;">
+          Información exhaustiva sobre las dimensiones, materiales certificados, uso diario y garantías de tu kit.
+        </p>
+
+        <div class="product-tabs-wrapper">
+          <div class="product-tab-buttons">
+            <button type="button" class="product-tab-btn active" onclick="switchProductTab('tab-specs', this)">Especificaciones Técnicas</button>
+            <button type="button" class="product-tab-btn" onclick="switchProductTab('tab-cuidados', this)">Limpieza & Lavavajillas</button>
+            <button type="button" class="product-tab-btn" onclick="switchProductTab('tab-seguridad', this)">Certificación Alimentaria</button>
+            <button type="button" class="product-tab-btn" onclick="switchProductTab('tab-envios', this)">Envíos 24/48h & Garantía</button>
+          </div>
+
+          <!-- Panel 1: Especificaciones -->
+          <div class="product-tab-content-panel active" id="tab-specs">
+            <div class="specs-grid-4col">
+              <div class="spec-data-card">
+                <div class="spec-data-label">Prensa Smash 304</div>
+                <div class="spec-data-value">Ø 140 mm · 2.5 mm</div>
+                <div class="spec-data-detail">Base plana sin bordes de 580 g de peso calibrado con soldadura TIG reforzada para máxima transmisión de fuerza.</div>
+              </div>
+              <div class="spec-data-card">
+                <div class="spec-data-label">Campana Cloche 304</div>
+                <div class="spec-data-value">Ø 160 mm · H 80 mm</div>
+                <div class="spec-data-detail">Acero 304 semipulido con pomo de baquelita disipador atérmico resistente a 260 °C. Fusión de cheddar en 25s.</div>
+              </div>
+              <div class="spec-data-card">
+                <div class="spec-data-label">Espátula Biselada 45°</div>
+                <div class="spec-data-value">125 x 75 mm</div>
+                <div class="spec-data-detail">Hoja afilada para raspar la costra milimétrica pegada al acero sin desgarrar la carne. Mango ergonómico remachado.</div>
+              </div>
+              <div class="spec-data-card">
+                <div class="spec-data-label">Sazonador Pro</div>
+                <div class="spec-data-value">250 ml · Malla 2 mm</div>
+                <div class="spec-data-detail">Cilindro de acero 304 con tapa protectora y perforación de dosificación uniforme de sal marina y pimienta.</div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Panel 2: Cuidados -->
+          <div class="product-tab-content-panel" id="tab-cuidados">
+            <div style="background: #0f0805; padding: 24px; border-radius: 10px; border: 1px solid rgba(255, 255, 255, 0.06); line-height: 1.6; color: #d6cdc2;">
+              <h4 style="font-family: var(--font-heading); font-size: 1.25rem; color: var(--fire-amber); margin-bottom: 10px;">
+                CERO ÓXIDO Y APTO PARA LAVAVAJILLAS
+              </h4>
+              <p style="margin-bottom: 12px;">
+                A diferencia de los utensilios convencionales de hierro fundido, el Acero Inoxidable 304 <strong>no requiere curado previo con aceite en el horno ni precauciones extremas de secado</strong>.
+              </p>
+              <ul style="padding-left: 20px; font-size: 0.92rem; color: #b5aba0;">
+                <li>Puedes meter la prensa, campana, espátula y sazonador directamente al lavavajillas tras cada barbacoa.</li>
+                <li>Si quedan restos caramelizados adheridos, un simple remojo en agua caliente o estropajo los retira en segundos sin rayar ni estropear la superficie.</li>
+                <li>Guárdalas en cualquier cajón sin miedo a que aparezcan manchas anaranjadas de corrosión.</li>
+              </ul>
+            </div>
+          </div>
+
+          <!-- Panel 3: Seguridad Alimentaria -->
+          <div class="product-tab-content-panel" id="tab-seguridad">
+            <div style="background: #0f0805; padding: 24px; border-radius: 10px; border: 1px solid rgba(255, 255, 255, 0.06); line-height: 1.6; color: #d6cdc2;">
+              <h4 style="font-family: var(--font-heading); font-size: 1.25rem; color: var(--fire-amber); margin-bottom: 10px;">
+                CUMPLIMIENTO DE NORMATIVA EUROPEA CE 1935/2004
+              </h4>
+              <p style="margin-bottom: 12px;">
+                El acero austenítico 18/8 (AISI 304) es el estándar de oro en la industria médica y en las cocinas de alta gastronomía mundial por ser un material <strong>totalmente inerte</strong>.
+              </p>
+              <ul style="padding-left: 20px; font-size: 0.92rem; color: #b5aba0;">
+                <li>No contiene teflón, PFAS, PFOA, plomo ni cadmio.</li>
+                <li>No desprende partículas tóxicas ni gases nocivos cuando se expone a fuegos de 300 °C.</li>
+                <li>No altera el sabor, olor ni color de los alimentos y resiste la acidez de mostazas, kétchup y salmueras.</li>
+              </ul>
+            </div>
+          </div>
+
+          <!-- Panel 4: Envíos y Garantía -->
+          <div class="product-tab-content-panel" id="tab-envios">
+            <div style="background: #0f0805; padding: 24px; border-radius: 10px; border: 1px solid rgba(255, 255, 255, 0.06); line-height: 1.6; color: #d6cdc2;">
+              <h4 style="font-family: var(--font-heading); font-size: 1.25rem; color: var(--fire-amber); margin-bottom: 10px;">
+                ENVÍO URGENTE 24/48H Y GARANTÍA VITALICIA
+              </h4>
+              <ul style="padding-left: 20px; font-size: 0.92rem; color: #b5aba0;">
+                <li><strong>Plazo de entrega:</strong> 24 a 48 horas laborables en España peninsular con número de seguimiento por mensajería express.</li>
+                <li><strong>Empaquetado seguro:</strong> Cada pieza viene protegida en su embalaje original serigrafiado con la tarjeta física que da acceso a la guía postcompra en QR.</li>
+                <li><strong>Derecho de desistimiento:</strong> 14 días naturales para devolución si el producto no ha sido utilizado.</li>
+                <li><strong>Garantía Vitalicia 304:</strong> Garantizamos de por vida la resistencia a la oxidación y rotura estructural de las piezas de acero 304 bajo uso culinario normal.</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Próximos Lanzamientos y Accesorios -->
+      <div class="upcoming-products-banner">
+        <span class="page-hero-badge">PRÓXIMAMENTE EN SMASHFIRE</span>
+        <h3 style="font-family: var(--font-heading); font-size: 2rem; color: #fff; text-transform: uppercase;">
+          EL ECOSISTEMA SMASHFIRE SIGUE CRECIENDO
+        </h3>
+        <p style="color: #a89f91; font-size: 0.95rem; max-width: 600px; margin: 8px auto 0;">
+          Estamos trabajando en nuevos complementos y accesorios de acero inoxidable para llevar tu experiencia de parrilla y plancha al siguiente nivel.
+        </p>
+
+        <div class="upcoming-products-grid">
+          <div class="upcoming-product-card">
+            <span class="upcoming-badge">En Desarrollo</span>
+            <h4 class="upcoming-card-title">Prensa Rectangular Doble XL (304)</h4>
+            <p class="upcoming-card-desc">Superficie ampliada para aplastar dos smashes a la vez sobre planchas grandes y barbacoas exteriores.</p>
+          </div>
+
+          <div class="upcoming-product-card">
+            <span class="upcoming-badge">Próximamente</span>
+            <h4 class="upcoming-card-title">Cuchillo de Chef Smash 304</h4>
+            <p class="upcoming-card-desc">Hoja serrada de precisión para rebanar pan brioche sin aplastarlo y picar cebolla en juliana ultrafina.</p>
+          </div>
+
+          <div class="upcoming-product-card">
+            <span class="upcoming-badge">Próximamente</span>
+            <h4 class="upcoming-card-title">Delantal Heavy-Duty Diner</h4>
+            <p class="upcoming-card-desc">Lona encerada ignífuga de alta resistencia a salpicaduras de grasa y calor directo con bolsillos para espátula.</p>
+          </div>
+        </div>
+      </div>
+
+    </section>
+  </main>
+
+  <!-- ====================================================================
+       FOOTER GLOBAL OFICIAL & LEGALES
+       ==================================================================== -->
+  <footer>
+    <div class="container">
+      <div class="footer-inner">
+        <div class="footer-brand">
+          <img src="images/logo.png" alt="SmashFire Logo Oficial" class="footer-logo-img">
+          <p class="footer-tagline">
+            El arte de la smash burger americana perfeccionado con acero inoxidable 304.
+          </p>
+          <div style="margin-top: 14px;">
+            <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" class="insta-cta-btn" style="padding: 8px 16px; font-size: 0.8rem; display: inline-flex;">
+              <svg class="sf-icon"><use href="#sf-instagram"></use></svg>
+              <span>@smashfire.es</span>
+            </a>
+          </div>
+        </div>
+
+        <div class="footer-nav-col">
+          <h4 style="font-family: 'Anton', sans-serif; color: var(--gold-light); text-transform: uppercase; margin-bottom: 12px;">Explorar</h4>
+          <ul style="list-style: none; display: flex; flex-direction: column; gap: 8px; font-size: 0.88rem;">
+            <li><a href="index.html" style="color: #ded6ce; text-decoration: none;">Inicio</a></li>
+            <li><a href="tienda.html" style="color: #ded6ce; text-decoration: none;">El Kit Oficial</a></li>
+            <li><a href="recetas.html" style="color: #ded6ce; text-decoration: none;">Biblioteca de Recetas</a></li>
+            <li><a href="nosotros.html" style="color: #ded6ce; text-decoration: none;">Sobre SmashFire</a></li>
+            <li><a href="contacto.html" style="color: #ded6ce; text-decoration: none;">Contacto</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-nav-col">
+          <h4 style="font-family: 'Anton', sans-serif; color: var(--gold-light); text-transform: uppercase; margin-bottom: 12px;">Garantía & Soporte</h4>
+          <p style="font-size: 0.84rem; color: #b8ada2; line-height: 1.5; margin-bottom: 10px;">
+            Atención al cliente directa:<br>
+            <strong style="color: #fff;">info@smashfire.es</strong>
+          </p>
+          <p style="font-size: 0.8rem; color: #8e847a;">
+            Pagos procesados y protegidos por Shopify Checkout. Aceptamos Visa, Mastercard, Apple Pay, Google Pay y Bizum.
+          </p>
+        </div>
+      </div>
+
+      <div class="footer-legal-bar" style="margin-top: 35px; padding-top: 20px; border-top: 1px solid rgba(255, 120, 30, 0.2); display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 14px; font-size: 0.78rem; color: #8e847a;">
+        <div>
+          &copy; 2026 SmashFire. Todos los derechos reservados.
+        </div>
+        <div class="footer-links">
+          <a href="legal/aviso-legal.html">Aviso Legal</a>
+          <span>·</span>
+          <a href="legal/privacidad.html">Política de Privacidad</a>
+          <span>·</span>
+          <a href="legal/cookies.html">Cookies</a>
+          <span>·</span>
+          <a href="legal/condiciones-venta.html">Condiciones de Venta</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>

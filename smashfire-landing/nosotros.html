@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Sobre SmashFire | Nuestra Historia, Filosofía y Pasión Diner</title>
+  <meta name="description" content="Conoce la historia detrás de SmashFire. Cómo rediseñamos el ritual de la smash burger americana con acero inoxidable 304 y una filosofía de acompañamiento total." />
+  <link rel="canonical" href="https://smashfire.es/nosotros.html" />
+
+  <!-- Metadatos Open Graph / Facebook -->
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="Sobre SmashFire | Nuestra Historia y Filosofía" />
+  <meta property="og:description" content="Acompañamos al apasionado del smash antes, durante y después del fuego. Cero óxido, puro acero 304." />
+  <meta property="og:url" content="https://smashfire.es/nosotros.html" />
+  <meta property="og:image" content="https://smashfire.es/images/experiencia-amigos.jpg" />
+
+  <!-- Tipografías de Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Anton&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Yellowtail&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+
+  <!-- Lienzo interactivo de chispas y brasas -->
+  <canvas id="embers-canvas"></canvas>
+
+  <!-- ====================================================================
+       SISTEMA DE ICONOS VECTORIALES DE MARCA (SVG NATIVO - CERO EMOJIS)
+       ==================================================================== -->
+  <svg id="sf-svg-library" style="display: none;" aria-hidden="true">
+    <symbol id="sf-flame" viewBox="0 0 24 24">
+      <path fill="currentColor" d="M12 23c-4.97 0-9-3.95-9-8.82 0-3.91 2.51-7.79 5.86-11.45.62-.68 1.74-.25 1.76.66.07 2.45 1.13 4.29 2.5 5.25.13-.97.43-1.95.96-2.88.36-.63 1.25-.66 1.63-.04 1.74 2.8 3.29 6.22 3.29 8.46 0 4.87-4.03 8.82-7 8.82zm-1-6c0 1.66 1.34 3 3 3 .83 0 1.58-.34 2.12-.88C15.68 18.06 15 16.63 15 15c0-1.8 1.12-3.35 2.72-3.96-.34-.96-.86-1.87-1.54-2.67-1.78 1.83-3.18 3.73-3.18 5.63z"/>
+    </symbol>
+
+    <symbol id="sf-cart" viewBox="0 0 24 24">
+      <path fill="currentColor" d="M17 18c-1.1 0-1.99.9-1.99 2s.89 2 1.99 2 2-.9 2-2-.9-2-2-2zM7 18c-1.1 0-1.99.9-1.99 2S5.9 22 7 22s2-.9 2-2-.9-2-2-2zm0-3l1.1-2h7.45c.75 0 1.41-.41 1.75-1.03L21.7 4H5.21l-.94-2H1v2h2l3.6 7.59-1.35 2.44C4.52 15.37 5.48 17 7 17h12v-2H7z"/>
+    </symbol>
+
+    <symbol id="sf-shield" viewBox="0 0 24 24">
+      <path fill="currentColor" d="M12 1L3 5v6c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V5l-9-4zm-2 16l-4-4 1.41-1.41L10 14.17l6.59-6.59L18 9l-8 8z"/>
+    </symbol>
+
+    <symbol id="sf-check" viewBox="0 0 24 24">
+      <path fill="currentColor" d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/>
+    </symbol>
+
+    <symbol id="sf-instagram" viewBox="0 0 24 24">
+      <path fill="currentColor" d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/>
+    </symbol>
+
+    <symbol id="sf-sparkle" viewBox="0 0 24 24">
+      <path fill="currentColor" d="M12 2l2.4 7.2L22 12l-7.6 2.8L12 22l-2.4-7.2L2 12l7.6-2.8L12 2z"/>
+    </symbol>
+
+    <symbol id="sf-heart" viewBox="0 0 24 24">
+      <path fill="currentColor" d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/>
+    </symbol>
+  </svg>
+
+  <!-- Barra de aviso superior -->
+  <div class="top-notice-bar">
+    <svg class="sf-icon"><use href="#sf-flame"></use></svg>
+    <span>FILOSOFÍA SMASHFIRE · ACOMPAÑAMOS AL CLIENTE ANTES, DURANTE Y DESPUÉS DEL FUEGO</span>
+    <svg class="sf-icon"><use href="#sf-flame"></use></svg>
+  </div>
+
+  <!-- Header Global Oficial -->
+  <header>
+    <div class="container">
+      <div class="nav-wrapper">
+        <a href="index.html" class="brand-logo" aria-label="SmashFire Home">
+          <img src="images/logo.png" alt="SmashFire Logo Oficial" class="header-logo-img">
+        </a>
+
+        <nav class="main-nav" id="main-nav">
+          <a href="index.html" class="main-nav-link">Inicio</a>
+          <a href="tienda.html" class="main-nav-link">El Kit</a>
+          <a href="recetas.html" class="main-nav-link">Recetas</a>
+          <a href="nosotros.html" class="main-nav-link active">Nosotros</a>
+          <a href="contacto.html" class="main-nav-link">Contacto</a>
+        </nav>
+
+        <div class="header-right-group">
+          <a href="https://tienda.smashfire.es/cart/59395325952264:1?storefront=true" class="btn-nav-buy">
+            <svg class="sf-icon"><use href="#sf-cart"></use></svg>
+            <span>Comprar Kit</span>
+          </a>
+
+          <div class="lang-selector-wrap">
+            <button class="lang-btn" id="lang-btn" type="button" aria-expanded="false" aria-label="Seleccionar idioma">
+              <span class="lang-code-pill">ES</span>
+              <span class="lang-chevron">▾</span>
+            </button>
+            <ul class="lang-menu" id="lang-menu">
+              <li><button class="active" onclick="switchLanguage('es')"><span class="lang-code-pill">ES</span> Español</button></li>
+              <li><button onclick="switchLanguage('pt')"><span class="lang-code-pill">PT</span> Português (Em breve)</button></li>
+              <li><button onclick="switchLanguage('en')"><span class="lang-code-pill">EN</span> English (Coming soon)</button></li>
+            </ul>
+          </div>
+
+          <button type="button" class="mobile-menu-btn" id="mobile-menu-toggle" aria-label="Abrir menú de navegación">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor">
+              <path d="M3 18h18v-2H3v2zm0-5h18v-2H3v2zm0-7v2h18V6H3z"/>
+            </svg>
+          </button>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <!-- Header Hero de Nosotros -->
+    <section class="page-hero-banner">
+      <div class="container">
+        <div class="page-hero-badge">
+          <svg class="sf-icon"><use href="#sf-flame"></use></svg>
+          <span>EL ESPÍRITU DINER EN CADA HOGAR</span>
+        </div>
+        <h1 class="page-hero-title">
+          NACIDOS DEL FUEGO, <span class="text-fire">PERFECCIONADOS EN ACERO</span>
+        </h1>
+        <p class="page-hero-lead">
+          No somos una marca de menaje genérico. Somos devotos de la costra perfecta, del humo de la plancha al rojo y de las sobremesas entre amigos.
+        </p>
+      </div>
+    </section>
+
+    <section class="about-page-section">
+      <!-- Manifiesto de Marca -->
+      <div class="about-manifesto-box">
+        <div class="about-manifesto-quote">
+          «Cansados de prensas oxidadas y antiadherentes que se pelan, decidimos crear la herramienta que nosotros mismos queríamos tener en nuestra cocina».
+        </div>
+        <div class="about-manifesto-text">
+          <p>
+            SmashFire nació de una conversación real frente a una plancha caliente. Habíamos probado decenas de prensas de hamburguesas importadas: prensas de hierro fundido que tras un lavado descuidado se convertían en bloques de óxido inutilizables, espátulas endebles de supermercado que se doblaban justo en el momento crucial del raspado, y campanas con tornillos plásticos que no resistían el vapor a 250 °C.
+          </p>
+          <p>
+            Entendimos que la técnica de la <em>Smash Burger</em> tradicional (nacida en los mostradores de acero inoxidable de los diners de los años 50 en Estados Unidos) exige una relación honesta con el metal: necesita <strong>fuerza bruta, masa térmica, contacto uniforme y nobleza higiénica</strong>.
+          </p>
+          <p>
+            Por eso elegimos el <strong>Acero Inoxidable AISI 304</strong> como el corazón indiscutible de SmashFire. Un material indestructible, libre de porosidades, que no transfiere sabores y que se limpia directamente en el lavavajillas sin exigir rituales de aceitado ni horas de curado.
+          </p>
+        </div>
+      </div>
+
+      <!-- Los 3 Pilares de Nuestra Filosofía -->
+      <h2 style="font-family: var(--font-heading); font-size: 2rem; color: #fff; text-align: center; text-transform: uppercase; margin-bottom: 12px;">
+        NUESTRA PROMESA EN TRES TIEMPOS
+      </h2>
+      <p style="text-align: center; color: #a89f91; font-size: 0.95rem; max-width: 600px; margin: 0 auto 36px;">
+        En SmashFire entendemos que comprar un producto es solo el inicio. Por eso acompañamos a nuestros clientes antes, durante y después del fuego.
+      </p>
+
+      <div class="about-pillars-grid">
+        <!-- Pilar 1 -->
+        <div class="about-pillar-card">
+          <div class="about-pillar-icon">
+            <svg class="sf-icon" style="width: 26px; height: 26px;"><use href="#sf-shield"></use></svg>
+          </div>
+          <h3 class="about-pillar-title">1. ANTES DE COMPRAR</h3>
+          <p class="about-pillar-desc">
+            Transparencia total. Hacemos públicos nuestros certificados metalúrgicos de acero 304 y ensayos alimentarios de la Unión Europea. Sin trucos ni falsos reclamos de marketing.
+          </p>
+        </div>
+
+        <!-- Pilar 2 -->
+        <div class="about-pillar-card">
+          <div class="about-pillar-icon">
+            <svg class="sf-icon" style="width: 26px; height: 26px;"><use href="#sf-flame"></use></svg>
+          </div>
+          <h3 class="about-pillar-title">2. DURANTE EL FUEGO</h3>
+          <p class="about-pillar-desc">
+            Herramientas pesadas y equilibradas. 2.5 mm de espesor en la prensa para aplastar con firmeza sin alabeo, filo biselado en la espátula para levantar la costra intacta y campana cloche con pomo que no quema.
+          </p>
+        </div>
+
+        <!-- Pilar 3 -->
+        <div class="about-pillar-card">
+          <div class="about-pillar-icon">
+            <svg class="sf-icon" style="width: 26px; height: 26px;"><use href="#sf-heart"></use></svg>
+          </div>
+          <h3 class="about-pillar-title">3. DESPUÉS DE LA COMPRA</h3>
+          <p class="about-pillar-desc">
+            La experiencia no termina con la caja. Incluimos la tarjeta con acceso a la guía postcompra en QR, recetas que se renuevan periódicamente y atención directa por correo por personas que aman cocinar.
+          </p>
+        </div>
+      </div>
+
+      <!-- Imagen y Comunidad -->
+      <div class="about-founder-box">
+        <img src="images/experiencia-amigos.jpg" alt="Amigos disfrutando de smash burgers preparadas con el Kit SmashFire" class="about-founder-img" />
+        <div class="about-founder-content">
+          <span style="font-size: 0.82rem; font-weight: 700; color: var(--fire-amber); text-transform: uppercase; letter-spacing: 0.08em; margin-bottom: 8px;">
+            COMUNIDAD SMASHFIRE
+          </span>
+          <h3 style="font-family: var(--font-heading); font-size: 1.8rem; color: #fff; margin-bottom: 14px; text-transform: uppercase;">
+            LA COMIDA SABE MEJOR CUANDO SE COMPARTE
+          </h3>
+          <p style="font-size: 0.95rem; color: #cfc5b8; line-height: 1.6; margin-bottom: 20px;">
+            Creemos que la smash burger es el pretexto perfecto para encender la plancha un viernes por la noche, invitar a la familia y amigos, escuchar el chisporroteo del vacuno 80/20 sobre el fuego y servir dos patties crujientes en cestas diner tradicionales.
+          </p>
+          <div>
+            <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" class="insta-cta-btn" style="display: inline-flex;">
+              <svg class="sf-icon"><use href="#sf-instagram"></use></svg>
+              <span>Síguenos en Instagram @smashfire.es</span>
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Banner Shopify Compra -->
+      <div class="shopify-cta-box" style="margin-top: 50px;">
+        <span class="shopify-cta-badge">ÚNETE AL MOVIMIENTO 304</span>
+        <h3 class="shopify-cta-title">¿QUIERES FORMAR PARTE DEL RITUAL SMASHFIRE?</h3>
+        <p class="shopify-cta-lead">
+          Consigue el Kit Oficial completo con envío 24/48h directo a tu casa y empieza a preparar burgers legendarias este fin de semana.
+        </p>
+        <div style="margin-top: 24px;">
+          <a href="https://tienda.smashfire.es/cart/59395325952264:1?storefront=true" class="btn-primary-fire" style="display: inline-flex;">
+            <svg class="sf-icon"><use href="#sf-cart"></use></svg>
+            <span>Comprar el Kit Oficial (49,99 €)</span>
+          </a>
+        </div>
+      </div>
+
+    </section>
+  </main>
+
+  <!-- ====================================================================
+       FOOTER GLOBAL OFICIAL & LEGALES
+       ==================================================================== -->
+  <footer>
+    <div class="container">
+      <div class="footer-inner">
+        <div class="footer-brand">
+          <img src="images/logo.png" alt="SmashFire Logo Oficial" class="footer-logo-img">
+          <p class="footer-tagline">
+            El arte de la smash burger americana perfeccionado con acero inoxidable 304.
+          </p>
+          <div style="margin-top: 14px;">
+            <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" class="insta-cta-btn" style="padding: 8px 16px; font-size: 0.8rem; display: inline-flex;">
+              <svg class="sf-icon"><use href="#sf-instagram"></use></svg>
+              <span>@smashfire.es</span>
+            </a>
+          </div>
+        </div>
+
+        <div class="footer-nav-col">
+          <h4 style="font-family: 'Anton', sans-serif; color: var(--gold-light); text-transform: uppercase; margin-bottom: 12px;">Explorar</h4>
+          <ul style="list-style: none; display: flex; flex-direction: column; gap: 8px; font-size: 0.88rem;">
+            <li><a href="index.html" style="color: #ded6ce; text-decoration: none;">Inicio</a></li>
+            <li><a href="tienda.html" style="color: #ded6ce; text-decoration: none;">El Kit Oficial</a></li>
+            <li><a href="recetas.html" style="color: #ded6ce; text-decoration: none;">Biblioteca de Recetas</a></li>
+            <li><a href="nosotros.html" style="color: #ded6ce; text-decoration: none;">Sobre SmashFire</a></li>
+            <li><a href="contacto.html" style="color: #ded6ce; text-decoration: none;">Contacto</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-nav-col">
+          <h4 style="font-family: 'Anton', sans-serif; color: var(--gold-light); text-transform: uppercase; margin-bottom: 12px;">Garantía & Soporte</h4>
+          <p style="font-size: 0.84rem; color: #b8ada2; line-height: 1.5; margin-bottom: 10px;">
+            Atención al cliente directa:<br>
+            <strong style="color: #fff;">info@smashfire.es</strong>
+          </p>
+          <p style="font-size: 0.8rem; color: #8e847a;">
+            Pagos procesados y protegidos por Shopify Checkout. Aceptamos Visa, Mastercard, Apple Pay, Google Pay y Bizum.
+          </p>
+        </div>
+      </div>
+
+      <div class="footer-legal-bar" style="margin-top: 35px; padding-top: 20px; border-top: 1px solid rgba(255, 120, 30, 0.2); display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 14px; font-size: 0.78rem; color: #8e847a;">
+        <div>
+          &copy; 2026 SmashFire. Todos los derechos reservados.
+        </div>
+        <div class="footer-links">
+          <a href="legal/aviso-legal.html">Aviso Legal</a>
+          <span>·</span>
+          <a href="legal/privacidad.html">Política de Privacidad</a>
+          <span>·</span>
+          <a href="legal/cookies.html">Cookies</a>
+          <span>·</span>
+          <a href="legal/condiciones-venta.html">Condiciones de Venta</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
